@@ -1,6 +1,6 @@
 import math
 
-#TODO: test the code
+#NOTE: if there are bugs, which I don't believe there might be, just let me know
 
 def calcPredictedVal(weights, trainingEx):
     
