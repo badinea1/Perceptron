@@ -1,6 +1,7 @@
 import math
 
 #NOTE: if there are bugs, which I don't believe there might be, just let me know
+#TODO: write comments for the code
 
 def calcPredictedVal(weights, trainingEx):
     
