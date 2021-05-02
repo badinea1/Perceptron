@@ -39,18 +39,6 @@ def updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput):
     
 #
 
-def learnFromDataSet(learningRate, weights, trainingSet):
- 
-    for item in trainingSet:
-        trainingEx = item[0: len(item) - 1]
-        targetOutput = item[len(item) - 1]
-        weights = updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput)
-    #
-    
-    return weights
-    
-#
-
 def calcMeanSquareError(trainingSet, weights):
     
     totalError = 0
@@ -63,8 +51,26 @@ def calcMeanSquareError(trainingSet, weights):
         totalError = totalError + errorSquared
     #
     
-    meanSquareError = totalError / len(trainingSet)
-    
-    return meanSquareError
+    return totalError / len(trainingSet)
        
+#
+
+def learnFromDataSet(learningRate, weights, trainingSet):
+    
+    initMSE = calcMeanSquareError(trainingSet, weights)
+ 
+    for item in trainingSet:
+        trainingEx = item[0: len(item) - 1]
+        targetOutput = item[len(item) - 1]
+        weights = updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput)
+    #
+    
+    finalMSE = calcMeanSquareError(trainingSet, weights)
+    
+    if(finalMSE != initMSE):
+        return learnFromDataSet(learningRate, weights, trainingSet)   
+    #
+    
+    return weights
+    
 #
