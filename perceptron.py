@@ -1,9 +1,11 @@
 import math
 
 def updatePerceptronWeights(learningRate, weights, trainingEx, perceptronOutput, targetOutput):
+    
+    trainingEx.insert(0, 0)
         
-    for x in range(1, len(weights)):
-        deltaWeight = trainingEx[x - 1] * (targetOutput - perceptronOutput) * learningRate
+    for x in range(0, len(weights)):
+        deltaWeight = trainingEx[x] * (targetOutput - perceptronOutput) * learningRate
         weights[x] = weights[x] + deltaWeight
     #
   
