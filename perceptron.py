@@ -41,18 +41,18 @@ def updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput):
 
 def performOneEpoch(learningRate, weights, trainingSet):
     
-    errors = 0
+    numOfErrors = 0
      
     for item in trainingSet:
         trainingEx = item[0: len(item) - 1]
         targetOutput = item[len(item) - 1]
         newWeights = updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput)
         if(newWeights != weights):
-           errors = errors + 1
+           numOfErrors = numOfErrors + 1
         #
         weights = newWeights
     #
     
-    return [weights, errors]
+    return [weights, numOfErrors]
     
 #
