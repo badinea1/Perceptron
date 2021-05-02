@@ -57,12 +57,18 @@ def updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput)
 def performOneEpoch(learningRate, percWeights, trainingSet):
     
     '''
-    input: learningRate is a float, percWeights is a list of weights for a perceptron, trainingSet is a list of training examples
+    input: learningRate is a float, percWeights is a list of weights for a perceptron, trainingSet contains training data
     output: returns [newWeights, numOfErrors], where newWeights is a list that results from updating percWeights during an epoch
     of learning and numOfErrors is the # of training examples the perceptron incorrectly classifies
     '''
     
     numOfErrors = 0
+    
+    '''
+    Format of each element in trainingSet: [x_1, ..., x_n, targetOutput]
+    -> targetOutput is a 1 or -1
+    -> x_1 to x_n are used by a perceptron to calculate a # that will be compared with targetOutput when updating perceptron weights
+    '''
      
     for item in trainingSet:
         trainingEx = item[0: len(item) - 1]
