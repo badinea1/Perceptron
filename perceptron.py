@@ -10,14 +10,14 @@ def calcPredictedVal(weights, trainingEx):
         copyOfTrainingEx.append(x)   
     #
 
-    sum = 0
+    total = 0
         
     for x in range(0, len(weights)):
         product = weights[x] * copyOfTrainingEx[x]
-        sum += product
+        total += product
     #
     
-    return sum
+    return total
 
 #
 
