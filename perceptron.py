@@ -2,7 +2,9 @@ import math
 
 #TODO: test the code
 
-def updatePerceptronWeights(learningRate, weights, trainingEx, perceptronOutput, targetOutput):
+def updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput):
+            
+    perceptronOutput = calcPredictedVal(weights, trainingEx)
             
     for x in range(0, len(weights)):
         deltaWeight = trainingEx[x] * (targetOutput - perceptronOutput) * learningRate
@@ -31,4 +33,3 @@ def calcPredictedVal(weights, trainingEx):
     return sum
 
 #
-
