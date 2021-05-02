@@ -55,20 +55,12 @@ def calcMeanSquareError(trainingSet, weights):
        
 #
 
-def learnFromDataSet(learningRate, weights, trainingSet):
-    
-    initMSE = calcMeanSquareError(trainingSet, weights)
- 
+def performOneEpoch(learningRate, weights, trainingSet):
+     
     for item in trainingSet:
         trainingEx = item[0: len(item) - 1]
         targetOutput = item[len(item) - 1]
         weights = updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput)
-    #
-    
-    finalMSE = calcMeanSquareError(trainingSet, weights)
-    
-    if(finalMSE != initMSE):
-        return learnFromDataSet(learningRate, weights, trainingSet)   
     #
     
     return weights
