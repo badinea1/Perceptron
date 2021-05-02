@@ -39,22 +39,6 @@ def updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput):
     
 #
 
-def calcMeanSquareError(trainingSet, weights):
-    
-    totalError = 0
-    
-    for item in trainingSet:
-        trainingEx = item[0: len(item) - 1]
-        targetOutput = item[len(item) - 1]
-        predictedOutput = calcPredictedVal(weights, trainingEx)
-        errorSquared = (targetOutput - predictedOutput) * (targetOutput - predictedOutput)
-        totalError = totalError + errorSquared
-    #
-    
-    return totalError / len(trainingSet)
-       
-#
-
 def performOneEpoch(learningRate, weights, trainingSet):
     
     errors = 0
