@@ -56,13 +56,19 @@ def calcMeanSquareError(trainingSet, weights):
 #
 
 def performOneEpoch(learningRate, weights, trainingSet):
+    
+    errors = 0
      
     for item in trainingSet:
         trainingEx = item[0: len(item) - 1]
         targetOutput = item[len(item) - 1]
-        weights = updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput)
+        newWeights = updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput)
+        if(newWeights != weights):
+           errors = errors + 1
+        #
+        weights = newWeights
     #
     
-    return weights
+    return [weights, errors]
     
 #
