@@ -51,25 +51,20 @@ def learnFromDataSet(learningRate, weights, trainingSet):
     
 #
 
-def calcAccuracy(trainingSet, weights):
+def calcMeanSquareError(trainingSet, weights):
     
-    correct = 0
-    incorrect = 0
+    totalError = 0
     
     for item in trainingSet:
         trainingEx = item[0: len(item) - 1]
         targetOutput = item[len(item) - 1]
         predictedOutput = calcPredictedVal(weights, trainingEx)
-        if(targetOutput == predictedOutput):
-            correct = correct + 1
-        else:
-            incorrect = incorrect + 1   
-        #
+        errorSquared = (targetOutput - predictedOutput) * (targetOutput - predictedOutput)
+        totalError = totalError + errorSquared
     #
     
-    total = 1.0 * (incorrect + correct)
-    accuracy = correct / total
+    meanSquareError = totalError / len(trainingSet)
     
-    return accuracy
+    return meanSquareError
        
 #
