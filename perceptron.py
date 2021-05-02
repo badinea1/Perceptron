@@ -39,32 +39,37 @@ def updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput):
     
 #
 
-def learnFromDataSet(trainingSet, learningRate, weights):
-            
+def learnFromDataSet(learningRate, weights, trainingSet):
+ 
     for item in trainingSet:
         trainingEx = item[0: len(item) - 1]
         targetOutput = item[len(item) - 1]
         weights = updatePerceptronWeights(learningRate, weights, trainingEx, targetOutput)
     #
-            
+    
     return weights
-
+    
 #
 
-def getWeightsFromDataSet(trainingSet, learningRate):
-
-    weights = []
+def calcAccuracy(trainingSet, weights):
     
-    for x in range(0, len(trainingSet[0])):
-        weights.append(0)             
-    #
-            
-    while(True):
-        newWeights = learnFromDataSet(trainingSet, learningRate, weights)
-        if(newWeights == weights):
-           return weights               
+    correct = 0
+    incorrect = 0
+    
+    for item in trainingSet:
+        trainingEx = item[0: len(item) - 1]
+        targetOutput = item[len(item) - 1]
+        predictedOutput = calcPredictedVal(weights, trainingEx)
+        if(targetOutput == predictedOutput):
+            correct = correct + 1
+        else:
+            incorrect = incorrect + 1   
         #
-        weights = newWeights               
     #
-
+    
+    total = 1.0 * (incorrect + correct)
+    accuracy = correct / total
+    
+    return accuracy
+       
 #
