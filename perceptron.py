@@ -33,3 +33,9 @@ def calcPredictedVal(weights, trainingEx):
     return sum
 
 #
+
+def learnFromDataSet(trainingSet):
+
+    pass
+
+#
