@@ -14,15 +14,14 @@ import os
 def process_file(path):
     
     """
-    Takes in a data file and processes data into a set
     Notes:
         Assumes the label for the data lies in the final column
-        Assumes the file is formatted as a csv
+        Assumes the file is formatted as a .csv or .data file
     Arguments:
         path : str : relative or absolute path to a csv file
     Returns:
         processed_data : ({label_i : [data_i]}) : a key-value dictionary,
-            data contains a list of doubles
+            data_i is a list of training examples associated with label_i
     """
 
     processed_data = dict()
@@ -46,6 +45,10 @@ def process_file(path):
                 if label != '':
                     processed_data[label] = list()
                     processed_data[label].append(row)
+                #
+            #
+        #
+    #
 
     return processed_data
 
@@ -55,7 +58,7 @@ def process_file(path):
 def getTrainingDataForLP(label, processed_data):
     
     '''
-    input: label is a string (i.e. 'Iris-virginica'), processed_data is a dictionary created from
+    input: label is a string (i.e. 'Iris-virginica'), processed_data is a dictionary created
     using the process_file function for a .data file
     output: a two dimensional list representing training data
     '''
@@ -89,6 +92,13 @@ def getTrainingDataForLP(label, processed_data):
 #
 
 def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile):
+    
+    '''
+    input: processed_data is a dictionary created using the process_file function for a .data file,
+    learningRate is a float, percWeights is a list of initial weights for a perceptron, nameOfEpochFile
+    is a string representing the name of the epoch file that will be produced
+    output: an epoch file required for D2, D3, or D4 of the project
+    '''
  
     # Create training data for LP 1
     trainingSet1 = getTrainingDataForLP('Iris-setosa', processed_data)
