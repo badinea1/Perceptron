@@ -1,6 +1,6 @@
 import math
 
-NOTE: THIS FILE MAY HAVE BUGS, I MIGHT NEED TO FIX THEM
+#NOTE: THIS FILE MAY HAVE BUGS, I MIGHT NEED TO FIX THEM
 
 #used to get a perceptron output for a training example
 def getPerceptronOutput(percWeights, trainingEx):
