@@ -1,8 +1,6 @@
 """
 Run the program using this file
-
     > python3 project4.py input_path
-
     where
         input_path : the path to a csv to create perceptron from
 """
@@ -17,14 +15,11 @@ def process_file(path):
     
     """
     Takes in a data file and processes data into a set
-
     Notes:
         Assumes the label for the data lies in the final column
         Assumes the file is formatted as a csv
-
     Arguments:
         path : str : relative or absolute path to a csv file
-
     Returns:
         processed_data : ({label_i : [data_i]}) : a key-value dictionary,
             data contains a list of doubles
