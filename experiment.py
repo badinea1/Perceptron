@@ -31,12 +31,36 @@ def getInitWeightVector(sizeOfWeightVector, taskNum):
     
 #
 
+#shuffles data in some .data file in random order
 def shuffleData(fileName):
+  
+    '''
+    input: absolute or relative path to a .data file
+    output: a .data file called shuffledData.data
+    '''
+    
+    rows = []
   
     with open(fileName, newline='') as csvfile:
         for row in csvfile:
-            print(row) 
+            # Remove any newline characters
+            row = row.rstrip()
+            
+            if(len(row) > 0):
+                # Split file on ',' characters
+                row = row.split(',')
+                
+                rows.append(row)    
+            #
         #
     #
+    
+    random.shuffle(rows)
 
+    file = open('shuffledData.csv', 'w')
+    obj = csv.writer(file)
+    obj.writerows(rows)
+    
+    os.system('mv shuffledData.csv shuffledData.data')
+    
 #
