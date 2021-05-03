@@ -64,3 +64,39 @@ def shuffleData(fileName):
     os.system('mv shuffledData.csv shuffledData.data')
     
 #
+
+#creates data set needed for learning problem 1, 2 or 3 of task 2
+def createDataSetForLP(label, processed_data):
+  
+    '''
+    input: label is a string (i.e. 'Iris-setosa'), processed_data -> ({label_i : [data_i]}) : a key-value dictionary, data contains a list of doubles
+    output: a two dimensional list representing a training set
+    '''
+    
+    trainingSet = []
+    
+    for x in processed_data:
+        if(x == label):
+            for y in processed_data[x]:
+                arr = []
+                for k in y:
+                    arr.append(k)   
+                #
+                arr.append(1)
+                trainingSet.append(arr)
+            #
+        else:
+            for y in processed_data[x]:
+                arr = []
+                for k in y:
+                    arr.append(k)   
+                #
+                arr.append(-1)
+                trainingSet.append(arr)
+            #
+        #
+    #
+    
+    return trainingSet
+       
+#
