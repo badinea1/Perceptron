@@ -34,11 +34,12 @@ def updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput)
     '''
             
     perceptronOutput = getPerceptronOutput(percWeights, trainingEx)
+    copyOfPercWeights = percWeights.copy()
     trainingEx.insert(0,1)
     
-    for x in range(0, len(percWeights)):
+    for x in range(0, len(copyOfPercWeights)):
         deltaWeight = trainingEx[x] * (targetOutput - perceptronOutput) * learningRate
-        percWeights[x] = percWeights[x] + deltaWeight
+        copyOfPercWeights[x] = copyOfPercWeights[x] + deltaWeight
     #
     
     trainingEx.pop(0)
@@ -52,11 +53,12 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron, trainingSet contains training data
-    output: returns [newWeights, numOfErrors], where newWeights is a list that results from updating percWeights during an epoch
+    output: returns [currWeights, numOfErrors], where currWeights is a list that results from updating percWeights during an epoch
     of learning and numOfErrors is the # of training examples the perceptron incorrectly classifies
     '''
     
     numOfErrors = 0
+    currWeights = percWeights.copy()
     
     '''
     Format of each element in trainingSet: [x_1, ..., x_n, targetOutput]
@@ -67,16 +69,14 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     for item in trainingSet:
         trainingEx = item[0: len(item) - 1]
         targetOutput = item[len(item) - 1]
-        weights = updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput)
-        if(weights != percWeights):
+        newWeights = updatePerceptronWeights(learningRate, currWeights, trainingEx, targetOutput)
+        if(newWeights != currWeights):
            numOfErrors = numOfErrors + 1
         #
-        percWeights = weights
+        currWeights = newWeights
     #
-    
-    newWeights = percWeights
-    
-    return [newWeights, numOfErrors]
+        
+    return [currWeights, numOfErrors]
     
 #
 
