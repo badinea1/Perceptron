@@ -116,6 +116,9 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     file = open(nameOfEpochFile, 'w')
     listOfArrays = [array1, array2, array3]
     lines = []
+    
+    word = 'Learning Rate: ' + str(learningRate)
+    lines.append(word)
         
     word = 'Initial Weight Vector: ' + str(percWeights) + '\n'
     lines.append(word)
@@ -145,62 +148,53 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
 def main():
    
     # Check arguments and assign path to variable
-    if len(sys.argv) < 4:
-        print("Usage: project4.py [INPUT FILE PATH] [TASK NUMBER] [LEARNING RATE]")
+    if len(sys.argv) < 3:
+        print("Usage: project4.py [INPUT FILE PATH] [LEARNING RATE]")
         sys.exit()
     #
     
     # sys.argv[1] has path to .data file
     input_path = sys.argv[1]
-    
-    # sys.argv[2] is task number
-    taskNum = float(sys.argv[2])
-    
-    # sys.argv[3] is learning rate
-    learningRate = float(sys.argv[3])
+        
+    # sys.argv[2] is learning rate
+    learningRate = float(sys.argv[2])
     
     # possibleTasks is an array of task numbers 
     possibleTasks = [2, 3.1, 3.2, 3.3, 4.1, 4.2]
-    index = -1
     
-    for x in range(0, len(possibleTasks)):
-        if(possibleTasks[x] == taskNum):
-            index = x
-            break
+    for taskNum in possibleTasks:
+        
+        processed_data = []
+        percWeights = []
+        
+        if((taskNum == 4.1) | (taskNum == 4.2)):
+            
+            '''
+            if you want to do task 4, you would have to shuffle data from .data file
+            provided by input_path
+            '''
+            
+            experiment.shuffleData(input_path)
+            processed_data = process_file('shuffledData.data')
+            os.system('rm shuffledData.data')
+            sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0]) + 1
+            percWeights = experiment.getInitWeightVector(sizeOfWeightVector, 4)
+            
+        else:
+            
+            # process data from a .data file provided by input_path
+            
+            processed_data = process_file(input_path)   
+            sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0]) + 1
+            percWeights = experiment.getInitWeightVector(sizeOfWeightVector, taskNum)
+            
         #
+        
+        nameOfEpochFile = 'T' + str(taskNum) + 'EpochStatFile.txt'
+        createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile)
+        
     #
     
-    if(index == -1):
-        print()
-        print("Possible Task Numbers -> {2, 3.1, 3.2, 3.3, 4.1, 4.2}")
-        print("You entered an invalid task number")
-        print()
-        sys.exit()
-    #
-    
-    # process data from a .data file provided by input_path
-    processed_data = process_file(input_path)
-    
-    nameOfEpochFile = 'T' + str(taskNum) + 'EpochStatFile.txt'
-    
-    '''
-    if you want to do task 4, you would have to shuffle data from .data file
-    provided by input_path
-    '''
-    
-    if((taskNum == 4.1) | (taskNum == 4.2)):
-        taskNum = 4
-        experiment.shuffleData(input_path)
-        processed_data = process_file('shuffledData.data')
-        os.system('rm shuffledData.data')
-    #
-
-    # Create initial weights based on task number
-    sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0]) + 1
-    percWeights = experiment.getInitWeightVector(sizeOfWeightVector, taskNum)
-    
-    createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile)
-
 if __name__ == "__main__":
     
     main()
