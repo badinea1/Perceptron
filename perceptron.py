@@ -99,7 +99,7 @@ def learnFromDataSet(learningRate, percWeights, trainingSet):
         newResult = performOneEpoch(learningRate, percWeights, trainingSet)
         newWeights = newResult[0]
         newNumOfErrors = newResult[1]
-        if(newNumOfErrors >= numOfErrors):
+        if((newNumOfErrors > numOfErrors) | (numOfErrors == 0)):
            break
         else:
            percWeights = newWeights
