@@ -8,14 +8,13 @@ def getPerceptronOutput(percWeights, trainingEx):
     output: perceptron output for training example
     '''
     
+    total = 0
     copyOfTrainingEx = [1]
     
     for x in trainingEx:
         copyOfTrainingEx.append(x)   
     #
-
-    total = 0
-        
+    
     for x in range(0, len(percWeights)):
         product = percWeights[x] * copyOfTrainingEx[x]
         total = total + product
