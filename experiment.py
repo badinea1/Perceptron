@@ -68,13 +68,3 @@ def shuffleData(fileName):
     os.system('mv shuffledData.csv shuffledData.data')
     
 #
-
-#used to perform tasks 2-4
-def perfTask(taskNum, rowsOfDataFile):
-  
-    #use learnFromDataSet function from perceptron.py
-    #use getInitWeightVector to obtain the initial weights
-  
-    pass
-  
-#
