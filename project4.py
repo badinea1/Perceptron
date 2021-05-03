@@ -178,9 +178,6 @@ def main():
         sys.exit()
     #
     
-    print()
-    print('Task Number:', taskNum)
-    
     # process data from a .data file provided by input_path
     processed_data = process_file(input_path)
     
