@@ -15,21 +15,19 @@ import experiment
 def process_file(path):
     
     """
-    Takes in a data file and processes data into a set
 
     Notes:
         Assumes the label for the data lies in the final column
         Assumes the file is formatted as a csv
 
     Arguments:
-        path : str : The csv to process
+        path : str : relative or absolute path to csv file
 
     Returns:
-        processed_data : ({label_i : [data_i]}) : a key-value dictionary,
-            data contains a list of doubles
+        rows : a list of rows of the csv file
     """
 
-    processed_data = dict()
+    rows = []
 
     with open(path, newline='') as csvfile:
         
@@ -38,27 +36,17 @@ def process_file(path):
             row = row.rstrip()
             
             if(len(row) > 0):
-                # Split file on ',' characters
+                # Split row of file on ',' characters
                 row = row.split(',')
-                # Remove the label from the data
-                label = row.pop()
-                # Either append data to existing data list or
-                if label in processed_data:
-                    processed_data[label].append(row)
-                # Add a new key to the dictionary and append data to list
-                else:
-                    if label != '':
-                        processed_data[label] = list()
-                        processed_data[label].append(row)
-                    #
-                #
+                
+                rows.append(row)
             #
             
          #
         
     #
     
-    return processed_data
+    return rows
 
 #
 
@@ -72,7 +60,7 @@ def main():
     
     input_path = sys.argv[1]
     
-    # Call process_file to create a dictionary of lists from file
+    # Obtain rows of file specified by sys.argv[1]
     processed_data = process_file(input_path)
     
     # Call perceptron algorithm
