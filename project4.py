@@ -122,11 +122,14 @@ def main():
     #
     
     if(index == -1):
+        print()
         print("Possible Task Numbers -> {2, 3.1, 3.2, 3.3, 4.1, 4.2}")
         print("You entered an invalid task number")
-        sys.exit(0)
+        print()
+        sys.exit()
     #
     
+    print()
     print('Task Number:', taskNum)
     
     # process data from a .data file provided by input_path
@@ -149,6 +152,7 @@ def main():
     percWeights = experiment.getInitWeightVector(sizeOfWeightVector, taskNum)
     
     print('Initial Weight Vector:', percWeights)
+    print()
     
     # Create training data for LP 1
     trainingSet1 = getTrainingDataForLP('Iris-setosa', processed_data)
