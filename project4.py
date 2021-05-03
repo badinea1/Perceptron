@@ -145,6 +145,8 @@ def main():
     sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0]) + 1
     percWeights = experiment.getInitWeightVector(sizeOfWeightVector, taskNum)
     
+    print('Initial Weight Vector:', percWeights)
+    
     # Create training data for LP 1
     trainingSet1 = getTrainingDataForLP('Iris-setosa', processed_data)
     
