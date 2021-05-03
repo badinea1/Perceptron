@@ -34,16 +34,14 @@ def updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput)
     '''
             
     perceptronOutput = getPerceptronOutput(percWeights, trainingEx)
-    copyOfTrainingEx = [1]
-    
-    for x in trainingEx:
-        copyOfTrainingEx.append(x)   
-    #
+    trainingEx.insert(0,1)
     
     for x in range(0, len(percWeights)):
-        deltaWeight = copyOfTrainingEx[x] * (targetOutput - perceptronOutput) * learningRate
+        deltaWeight = trainingEx[x] * (targetOutput - perceptronOutput) * learningRate
         percWeights[x] = percWeights[x] + deltaWeight
     #
+    
+    trainingEx.pop(0)
   
     return percWeights
     
