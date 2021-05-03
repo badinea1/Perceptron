@@ -117,7 +117,7 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     listOfArrays = [array1, array2, array3]
     lines = []
     
-    word = 'Learning Rate: ' + str(learningRate)
+    word = 'Learning Rate: ' + str(learningRate) + '\n'
     lines.append(word)
         
     word = 'Initial Weight Vector: ' + str(percWeights) + '\n'
