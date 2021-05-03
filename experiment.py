@@ -66,38 +66,6 @@ def shuffleData(fileName):
     
 #
 
-#creates training data needed for learning problem 1,2 or 3 of task 2
-def getTrainingDataForLP(rowsOfCsvFile, label):
-  
-    '''
-    input: rowsOfCsvFile is a list of rows of a csv file , label is a string (i.e. 'Iris-virginica')
-    output: a two dimensional list representing training data
-    '''
-
-    rows = []
-    
-    for x in rowsOfCsvFile:
-        rows.append(x) 
-    #
-    
-    for x in range(0, len(rows)):
-        if(rows[x][len(rows[x]) - 1] == label):
-           rows[x][len(rows[x]) - 1] = 1
-        else:
-           rows[x][len(rows[x]) - 1] = -1  
-        #
-    #
-    
-    for x in range(0, len(rows)):
-        for y in range(0, len(rows[x])):
-            rows[x][y] = float(rows[x][y]) 
-        #
-    #
-    
-    return rows
-
-#
-
 #used to perform tasks 2-4
 def perfTask(taskNum, rowsOfDataFile):
   
