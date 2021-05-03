@@ -75,18 +75,24 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     -> targetOutput is a 1 or -1
     -> x_1 to x_n are used by a perceptron to calculate a # that will be compared with targetOutput when updating perceptron weights
     '''
+    
+    copyOfPercWeights = []
+    
+    for x in percWeights:
+        copyOfPercWeights.append(x)   
+    #
      
     for item in trainingSet:
         trainingEx = item[0: len(item) - 1]
         targetOutput = item[len(item) - 1]
-        weights = updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput)
-        if(weights != percWeights):
-           numOfErrors = numOfErrors + 1
+        weights = updatePerceptronWeights(learningRate, copyOfPercWeights, trainingEx, targetOutput)
+        if(copyOfPercWeights != weights):
+            numOfErrors = numOfErrors + 1   
         #
-        percWeights = weights
+        copyOfPercWeights = weights
     #
     
-    newWeights = percWeights
+    newWeights = copyOfPercWeights
     
     return [newWeights, numOfErrors]
     
