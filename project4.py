@@ -117,29 +117,28 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     listOfArrays = [array1, array2, array3]
     lines = []
         
-    word = 'Initial Weight Vector: ' + str(percWeights)
+    word = 'Initial Weight Vector: ' + str(percWeights) + '\n'
     lines.append(word)
     
     for x in range(0, len(listOfArrays)):
-        lines.append('******************')
+        lines.append('******************\n')
         number = x + 1
-        word = 'LP ' + str(number)
+        word = 'LP ' + str(number) + '\n'
         lines.append(word)
-        lines.append('')
+        lines.append('\n')
         for y in range(0, len(listOfArrays[x])):
             epochNumber = y + 1
             learnedWeights = listOfArrays[x][y][0]
             numOfErrors = listOfArrays[x][y][1]
-            string = 'EPOCH ' + str(epochNumber) + ': Learned Weights = ' + str(learnedWeights) + ', ' + '# of errors made on training set = ' + str(numOfErrors)
+            string = 'EPOCH ' + str(epochNumber) + ': Learned Weights = ' + str(learnedWeights) + ', ' + '# of errors made on training set = ' + str(numOfErrors) + '\n'
             lines.append(string)
         #
     #
     
-    lines.append('')
+    lines.append('******************\n')
+    lines.append('\n')
     
-    for x in lines:
-        print(x)
-    #   
+    file.writelines(lines)   
     
 #
 
