@@ -88,6 +88,12 @@ def getTrainingDataForLP(rowsOfCsvFile, label):
         #
     #
     
+    for x in range(0, len(rows)):
+        for y in range(0, len(rows[x])):
+            rows[x][y] = float(rows[x][y]) 
+        #
+    #
+    
     return rows
 
 #
