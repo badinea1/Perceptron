@@ -44,7 +44,7 @@ def updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput)
     
     trainingEx.pop(0)
   
-    return percWeights
+    return copyOfPercWeights
     
 #
 
