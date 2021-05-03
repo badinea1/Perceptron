@@ -2,6 +2,7 @@ import math
 import random
 import perceptron
 import csv
+import os
 
 #initializes a weight vector for tasks 2, 3.1, 3.2, 3.3, 4
 def getInitWeightVector(sizeOfWeightVector, taskNum):
