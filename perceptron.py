@@ -1,7 +1,5 @@
 import math
 
-#NOTE: if there are bugs, which I don't believe there might be, just let me know
-
 #used to get a perceptron output for a training example
 def getPerceptronOutput(percWeights, trainingEx):
     
