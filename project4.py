@@ -9,9 +9,8 @@ Run the program using this file
 
 import csv
 import sys
-
-from perceptron import *
-from experiment import *
+import perceptron
+import experiment
 
 def process_file(path):
     
@@ -54,6 +53,43 @@ def process_file(path):
 
     return processed_data
 
+#
+
+#creates training data needed for learning problem 1,2 or 3 of task 2
+def getTrainingDataForLP(label, processed_data):
+    
+    '''
+    input: label is a string (i.e. 'Iris-virginica'), processed_data is a dictionary created from
+    using the process_file function for a .data file
+    output: a two dimensional list representing training data
+    '''
+    
+    trainingSet = []
+    
+    for x in processed_data:
+        if(x == label):
+           for y in processed_data[x]:
+               array = y.copy()
+               array.append(1)
+               for k in range(0, len(array)):
+                   array[k] = float(array[k])
+               #
+               trainingSet.append(array)
+           #
+        else:
+           for y in processed_data[x]:
+               array = y.copy()
+               array.append(-1)
+               for k in range(0, len(array)):
+                   array[k] = float(array[k])
+               #
+               trainingSet.append(array)
+           #
+        #
+    #
+    
+    return trainingSet
+       
 #
 
 def main():
