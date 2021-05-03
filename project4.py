@@ -111,7 +111,6 @@ def main():
     
     # possibleTasks is an array of task numbers 
     possibleTasks = [2, 3.1, 3.2, 3.3, 4.1, 4.2]
-    
     index = -1
     
     for x in range(0, len(possibleTasks)):
