@@ -124,6 +124,7 @@ def main():
     if(index == -1):
         print("Possible Task Numbers -> {2, 3.1, 3.2, 3.3, 4.1, 4.2}")
         print("You entered an invalid task number")
+        sys.exit(0)
     #
     
     # process data from a .data file provided by input_path
