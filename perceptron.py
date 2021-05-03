@@ -83,3 +83,35 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     return [newWeights, numOfErrors]
     
 #
+
+#records information about every epoch of learning necessary for the data set
+def learnFromDataSet(learningRate, percWeights, trainingSet):
+    
+    '''
+    input: learningRate is a float, percWeights is a list of weights for a perceptron,
+    trainingSet contains training data
+    output: a list in which the kth element will contain information about the kth
+    epoch of learning which takes place
+    '''
+ 
+    result = performOneEpoch(learningRate, percWeights, trainingSet)
+    array = [result]
+    percWeights = result[0]
+    numOfErrors = result[1]
+   
+    while(True):
+        newResult = performOneEpoch(learningRate, percWeights, trainingSet)
+        newWeights = newResult[0]
+        newNumOfErrors = newResult[1]
+        if(newNumOfErrors == numOfErrors):
+           break
+        else:
+           percWeights = newWeights
+           numOfErrors = newNumOfErrors
+           array.append(newResult)
+        #
+    #
+   
+    return array
+   
+#
