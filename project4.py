@@ -184,7 +184,7 @@ def main():
     # process data from a .data file provided by input_path
     processed_data = process_file(input_path)
     
-    nameOfEpochFile = 'T' + str(taskNum) + 'EPS.txt'
+    nameOfEpochFile = 'T' + str(taskNum) + 'EpochStatFile.txt'
     
     '''
     if you want to do task 4, you would have to shuffle data from .data file
