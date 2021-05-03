@@ -69,18 +69,7 @@ def main():
     # Obtain rows of file specified by sys.argv[1]
     processed_data = process_file(input_path)
 
-    for key in processed_data:
-        print(key)
-        print(processed_data[key])
-    
-    # Set values for use
-    learningRate = .01
-    percWeights = [.1,.4,.8,.2]
-    trainingEx = processed_data["Iris-virginica"]
-    targetOutput = 1
-
-    # Call perceptron algorithm
-    print(learnFromDataSet(learningRate, percWeights, trainingEx, targetOutput))
+    #write additional code
 
 if __name__ == "__main__":
     
