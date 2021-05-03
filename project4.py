@@ -21,10 +21,10 @@ def process_file(path):
         Assumes the file is formatted as a csv
 
     Arguments:
-        path : str : relative or absolute path to csv file
+        path : str : relative or absolute path to a csv file
 
     Returns:
-        rows : a list of rows of the csv file
+        rows : a list of rows of a csv file
     """
 
     rows = []
