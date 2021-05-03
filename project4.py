@@ -92,6 +92,56 @@ def getTrainingDataForLP(label, processed_data):
        
 #
 
+def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile):
+ 
+    # Create training data for LP 1
+    trainingSet1 = getTrainingDataForLP('Iris-setosa', processed_data)
+    
+    # Create training data for LP 2
+    trainingSet2 = getTrainingDataForLP('Iris-versicolor', processed_data)
+    
+    # Create training data for LP 3
+    trainingSet3 = getTrainingDataForLP('Iris-virginica', processed_data)
+    
+    # get information about every epoch of learning for trainingSet1
+    array1 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet1)
+    
+    # get information about every epoch of learning for trainingSet2
+    array2 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet2)
+    
+    # get information about every epoch of learning for trainingSet3
+    array3 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet3)
+    
+    file = open(nameOfEpochFile, 'w')
+    listOfArrays = [array1, array2, array3]
+    lines = []
+        
+    word = 'Initial Weight Vector: ' + str(percWeights)
+    lines.append(word)
+    
+    for x in range(0, len(listOfArrays)):
+        lines.append('******************')
+        number = x + 1
+        word = 'LP ' + str(number)
+        lines.append(word)
+        lines.append('')
+        for y in range(0, len(listOfArrays[x])):
+            epochNumber = y + 1
+            learnedWeights = listOfArrays[x][y][0]
+            numOfErrors = listOfArrays[x][y][1]
+            string = 'EPOCH ' + str(epochNumber) + ': Learned Weights = ' + str(learnedWeights) + ', ' + '# of errors made on training set = ' + str(numOfErrors)
+            lines.append(string)
+        #
+    #
+    
+    lines.append('')
+    
+    for x in lines:
+        print(x)
+    #   
+    
+#
+
 def main():
    
     # Check arguments and assign path to variable
@@ -134,6 +184,8 @@ def main():
     # process data from a .data file provided by input_path
     processed_data = process_file(input_path)
     
+    nameOfEpochFile = 'T' + str(taskNum) + 'EPS.txt'
+    
     '''
     if you want to do task 4, you would have to shuffle data from .data file
     provided by input_path
@@ -150,26 +202,7 @@ def main():
     sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0]) + 1
     percWeights = experiment.getInitWeightVector(sizeOfWeightVector, taskNum)
     
-    print('Initial Weight Vector:', percWeights)
-    print()
-    
-    # Create training data for LP 1
-    trainingSet1 = getTrainingDataForLP('Iris-setosa', processed_data)
-    
-    # Create training data for LP 2
-    trainingSet2 = getTrainingDataForLP('Iris-versicolor', processed_data)
-    
-    # Create training data for LP 3
-    trainingSet3 = getTrainingDataForLP('Iris-virginica', processed_data)
-    
-    # get information about every epoch of learning for trainingSet1
-    array1 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet1)
-    
-    # get information about every epoch of learning for trainingSet2
-    array2 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet2)
-    
-    # get information about every epoch of learning for trainingSet3
-    array3 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet3)
+    createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile)
 
 if __name__ == "__main__":
     
