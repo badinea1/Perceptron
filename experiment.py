@@ -33,6 +33,10 @@ def getInitWeightVector(sizeOfWeightVector, taskNum):
 
 def shuffleData(fileName):
   
-    pass
+    with open(fileName, newline='') as csvfile:
+        for row in csvfile:
+            print(row) 
+        #
+    #
 
 #
