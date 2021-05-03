@@ -23,7 +23,11 @@ def getPerceptronOutput(percWeights, trainingEx):
         total = total + product
     #
     
-    return total
+    if(total > 0):
+       return 1
+    #
+    
+    return -1
 
 #
 
