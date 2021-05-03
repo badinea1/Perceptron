@@ -11,6 +11,7 @@ import csv
 import sys
 import perceptron
 import experiment
+import os
 
 def process_file(path):
     
