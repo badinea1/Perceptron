@@ -7,16 +7,10 @@ def getPerceptronOutput(percWeights, trainingEx):
     input: percWeights is a list of weights for a perceptron, trainingEx is a training example
     output: perceptron output for training example
     '''
+    total = percWeights[0]
     
-    total = 0
-    copyOfTrainingEx = [1]
-    
-    for x in trainingEx:
-        copyOfTrainingEx.append(x)   
-    #
-    
-    for x in range(0, len(percWeights)):
-        product = percWeights[x] * copyOfTrainingEx[x]
+    for x in range(0, len(trainingEx)):
+        product = percWeights[x + 1] * trainingEx[x]
         total = total + product
     #
     
