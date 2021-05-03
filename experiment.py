@@ -1,5 +1,6 @@
 import math
 import random
+import perceptron
 
 #initializes a weight vector for tasks 2, 3.1, 3.2, 3.3, 4
 def getInitWeightVector(sizeOfWeightVector, taskNum):
@@ -89,4 +90,14 @@ def getTrainingDataForLP(rowsOfCsvFile, label):
     
     return rows
 
+#
+
+#used to perform tasks 2-4
+def perfTask(taskNum, rowsOfDataFile):
+  
+    #use learnFromDataSet function from perceptron.py
+    #use getInitWeightVector to obtain the initial weights
+  
+    pass
+  
 #
