@@ -64,3 +64,9 @@ def shuffleData(fileName):
     os.system('mv shuffledData.csv shuffledData.data')
     
 #
+
+def getTrainingDataForLP(rowsOfCsvFile, label):
+
+    pass
+
+#
