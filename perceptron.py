@@ -84,7 +84,7 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     
 #
 
-#records information about every epoch of learning necessary for the data set
+#records information about every epoch of learning necessary for a training set
 def learnFromDataSet(learningRate, percWeights, trainingSet):
     
     '''
