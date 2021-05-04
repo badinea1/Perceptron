@@ -130,7 +130,7 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     lines.append(word)
     
     for x in range(0, len(copyOfPercWeights)):
-        copyOfPercWeights[x] = 'w_' + str(x) + ' = ' + str(copyOfPercWeights[x])
+        copyOfPercWeights[x] = 'w_' + str(x + 1) + ' = ' + str(copyOfPercWeights[x])
     #   
         
     word = 'Initial Weight Vector: ' + str(copyOfPercWeights) + '\n'
@@ -146,7 +146,7 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
             epochNumber = y + 1
             learnedWeights = listOfArrays[x][y][0]
             for k in range(0, len(learnedWeights)):
-                learnedWeights[k] = 'w_' + str(k) + ' = ' + str(learnedWeights[k])   
+                learnedWeights[k] = 'w_' + str(k + 1) + ' = ' + str(learnedWeights[k])   
             #
             numOfErrors = listOfArrays[x][y][1]
             string = 'EPOCH ' + str(epochNumber) + ': Learned Weights = ' + str(learnedWeights) + ', ' + '# of errors made on training data = ' + str(numOfErrors) + '\n'
