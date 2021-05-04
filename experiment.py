@@ -19,6 +19,8 @@ def getInitWeightVector(sizeOfWeightVector, taskNum):
     if((taskNum == 2) | (taskNum == 4)):
        array = [0] * sizeOfWeightVector
         
+    #WARNING: I HAVE TO ASK DR. BLOODGOOD WHAT w_0 should be for tasks 3.1, 3.2, 3.3
+        
     #for task 3.1, create a weight vector that has 1s ONLY
     elif(taskNum == 3.1):
        array = [1] * sizeOfWeightVector
@@ -30,9 +32,7 @@ def getInitWeightVector(sizeOfWeightVector, taskNum):
            array.append(number)
        #
     #
-    
-    array[0] = 0
-    
+        
     return array
     
 #
