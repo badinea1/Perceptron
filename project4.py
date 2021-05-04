@@ -1,8 +1,9 @@
 """
 Run the program using this file
-    > python3 project4.py input_path
+    > python3 project4.py input_path learning_rate
     where
-        input_path : the path to a csv to create perceptron from
+        input_path : the path to a .csv or .data file
+        learning_rate : a float
 """
 
 import csv
@@ -10,6 +11,7 @@ import sys
 import perceptron
 import experiment
 import os
+import matplotlib.pyplot as plt
 
 def process_file(path):
     
@@ -91,6 +93,7 @@ def getTrainingDataForLP(label, processed_data):
        
 #
 
+#creates epoch stat files needed for D2, D3 or D4 of the project
 def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile):
     
     '''
@@ -150,6 +153,52 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     
 #
 
+#creates plots needed for D2, D3, or D4 of the project
+def createPlotFile(processed_data, learningRate, percWeights, task):
+    
+    # Create training data for LP 1
+    trainingSet1 = getTrainingDataForLP('Iris-setosa', processed_data)
+    
+    # Create training data for LP 2
+    trainingSet2 = getTrainingDataForLP('Iris-versicolor', processed_data)
+    
+    # Create training data for LP 3
+    trainingSet3 = getTrainingDataForLP('Iris-virginica', processed_data)
+    
+    # get information about every epoch of learning for trainingSet1
+    array1 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet1)
+    
+    # get information about every epoch of learning for trainingSet2
+    array2 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet2)
+    
+    # get information about every epoch of learning for trainingSet3
+    array3 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet3)
+    
+    listOfArrays = [array1, array2, array3]
+
+    for x in range(0, len(listOfArrays)):
+        number = x + 1
+        word = task + 'LP' + str(number) + 'Plot.png'
+        xValues = []
+        yValues = []
+        for y in listOfArrays[x]:
+            yValues.append(y[len(y) - 1])
+        #
+        for x in range(0, len(yValues)):
+            number = x + 1
+            xValues.append(number)   
+        #
+        xValues.insert(0,0)
+        yValues.insert(0,0)
+        plt.plot(xValues, yValues)
+        plt.xlabel('epoch # of learning')
+        plt.ylabel('# of errors made on training data')
+        plt.savefig(word)
+        plt.clf()
+    #
+       
+#
+
 def main():
    
     # Check arguments and assign path to variable
@@ -198,6 +247,9 @@ def main():
         
         nameOfEpochFile = 'T' + str(taskNum) + 'EpochStatFile.txt'
         createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile)
+        
+        task = 'T' + str(taskNum)
+        createPlotFile(processed_data, learningRate, percWeights, task)
         
     #
     
