@@ -144,7 +144,7 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
                 learnedWeights[k] = 'w_' + str(k) + ' = ' + str(learnedWeights[k])   
             #
             numOfErrors = listOfArrays[x][y][1]
-            string = 'EPOCH ' + str(epochNumber) + ': Learned Weights = ' + str(learnedWeights) + ', ' + '# of errors made on training set = ' + str(numOfErrors) + '\n'
+            string = 'EPOCH ' + str(epochNumber) + ': Learned Weights = ' + str(learnedWeights) + ', ' + '# of errors made on training data = ' + str(numOfErrors) + '\n'
             lines.append(string)
         #
     #
