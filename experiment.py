@@ -18,9 +18,7 @@ def getInitWeightVector(sizeOfWeightVector, taskNum):
     #for tasks 2 and 4, create a weight vector that has 0s ONLY
     if((taskNum == 2) | (taskNum == 4)):
        array = [0] * sizeOfWeightVector
-        
-    #WARNING: I HAVE TO ASK DR. BLOODGOOD WHAT w_0 should be for tasks 3.1, 3.2, 3.3
-        
+               
     #for task 3.1, create a weight vector that has 1s ONLY
     elif(taskNum == 3.1):
        array = [1] * sizeOfWeightVector
