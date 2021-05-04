@@ -31,6 +31,8 @@ def getInitWeightVector(sizeOfWeightVector, taskNum):
        #
     #
     
+    array[0] = 0
+    
     return array
     
 #
