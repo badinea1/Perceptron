@@ -167,6 +167,7 @@ def main():
     # possibleTasks is an array of task numbers 
     possibleTasks = [2, 3.1, 3.2, 3.3, 4.1, 4.2]
     
+    # create an epoch stat file for tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2
     for taskNum in possibleTasks:
         
         processed_data = []
