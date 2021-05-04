@@ -226,6 +226,13 @@ def main():
     # possibleTasks is an array of task numbers 
     possibleTasks = [2, 3.1, 3.2, 3.3, 4.1, 4.2]
     
+    os.system('rm D2/* > /dev/null 2>&1')
+    os.system('rm D3/* > /dev/null 2>&1')
+    os.system('rm D4/* > /dev/null 2>&1')
+    os.system('rm -d D2 > /dev/null 2>&1')
+    os.system('rm -d D3 > /dev/null 2>&1')
+    os.system('rm -d D4 > /dev/null 2>&1')
+    
     os.system('mkdir D2')
     os.system('mkdir D3')
     os.system('mkdir D4')
