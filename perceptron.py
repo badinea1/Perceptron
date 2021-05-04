@@ -69,11 +69,11 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     for item in trainingSet:
         trainingEx = item[0: len(item) - 1]
         targetOutput = item[len(item) - 1]
-        newWeights = updatePerceptronWeights(learningRate, currWeights, trainingEx, targetOutput)
-        if(newWeights != currWeights):
-           numOfErrors = numOfErrors + 1
+        perceptronOutput = getPerceptronOutput(currWeights, trainingEx)
+        if(targetOutput != perceptronOutput):
+            currWeights = updatePerceptronWeights(learningRate, currWeights, trainingEx, targetOutput)
+            numOfErrors += 1   
         #
-        currWeights = newWeights
     #
         
     return [currWeights, numOfErrors]
