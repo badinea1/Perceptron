@@ -258,7 +258,7 @@ def main():
             experiment.shuffleData(input_path)
             processed_data = process_file('shuffledData.data')
             os.system('rm shuffledData.data')
-            sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0]) + 1
+            sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0])
             percWeights = experiment.getInitWeightVector(sizeOfWeightVector, 4)
             
         else:
@@ -266,7 +266,7 @@ def main():
             # process data from a .data file provided by input_path
             
             processed_data = process_file(input_path)   
-            sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0]) + 1
+            sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0])
             percWeights = experiment.getInitWeightVector(sizeOfWeightVector, taskNum)
             
         #
