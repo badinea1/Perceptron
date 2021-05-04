@@ -140,6 +140,9 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
         for y in range(0, len(listOfArrays[x])):
             epochNumber = y + 1
             learnedWeights = listOfArrays[x][y][0]
+            for k in range(0, len(learnedWeights)):
+                learnedWeights[k] = 'w_' + str(k) + ' = ' + str(learnedWeights[k])   
+            #
             numOfErrors = listOfArrays[x][y][1]
             string = 'EPOCH ' + str(epochNumber) + ': Learned Weights = ' + str(learnedWeights) + ', ' + '# of errors made on training set = ' + str(numOfErrors) + '\n'
             lines.append(string)
@@ -155,6 +158,13 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
 
 #creates plots needed for D2, D3, or D4 of the project
 def createPlotFile(processed_data, learningRate, percWeights, task):
+    
+    '''
+    input: processed_data is a dictionary created using the process_file function for a .data file,
+    learningRate is a float, percWeights is a list of initial weights for a perceptron, task
+    is a string
+    output: a plot required for D2, D3, or D4 of the project
+    '''
     
     # Create training data for LP 1
     trainingSet1 = getTrainingDataForLP('Iris-setosa', processed_data)
@@ -216,6 +226,10 @@ def main():
     # possibleTasks is an array of task numbers 
     possibleTasks = [2, 3.1, 3.2, 3.3, 4.1, 4.2]
     
+    os.system('mkdir D2')
+    os.system('mkdir D3')
+    os.system('mkdir D4')
+    
     # create an epoch stat file for tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2
     for taskNum in possibleTasks:
         
@@ -246,9 +260,21 @@ def main():
         #
         
         nameOfEpochFile = 'T' + str(taskNum) + 'EpochStatFile.txt'
-        createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile)
-        
         task = 'T' + str(taskNum)
+        folder = ''
+        
+        if(int(taskNum) == 2):
+           folder = 'D2/'
+        elif(int(taskNum) == 3):
+           folder = 'D3/'
+        elif(int(taskNum) == 4):
+           folder = 'D4/'   
+        #
+        
+        nameOfEpochFile = folder + nameOfEpochFile
+        task = folder + task
+        
+        createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile)
         createPlotFile(processed_data, learningRate, percWeights, task)
         
     #
