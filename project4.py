@@ -32,21 +32,25 @@ def process_file(path):
         for row in csvfile:
             # Remove any newline characters
             row = row.rstrip()
-            # Split file on ',' characters
-            row = row.split(',')
-            # Remove the label from the data
-            label = row.pop()
-            # Convert list items to floats
-            row = list(map(float, row))
-            # Either append data to existing data list or
-            if label in processed_data:
-                processed_data[label].append(row)
-            # Add a new key to the dictionary and append data to list
-            else:
-                # Ensure the row isn't empty
-                if label != '':
-                    processed_data[label] = list()
+            
+            if(len(row) > 0):
+                # Split file on ',' characters
+                row = row.split(',')
+                # Remove the label from the data
+                label = row.pop()
+                # Convert list items to floats
+                row = list(map(float, row))
+                row.insert(0,1)
+                # Either append data to existing data list or
+                if label in processed_data:
                     processed_data[label].append(row)
+                # Add a new key to the dictionary and append data to list
+                else:
+                    # Ensure the row isn't empty
+                    if label != '':
+                        processed_data[label] = list()
+                        processed_data[label].append(row)
+                    #
                 #
             #
         #
@@ -129,6 +133,11 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     word = 'Learning Rate: ' + str(learningRate) + '\n'
     lines.append(word)
     
+    word = 'Initial bias: ' + str(copyOfPercWeights[0]) + '\n'
+    lines.append(word)
+    
+    copyOfPercWeights.pop(0)
+    
     for x in range(0, len(copyOfPercWeights)):
         copyOfPercWeights[x] = 'w_' + str(x + 1) + ' = ' + str(copyOfPercWeights[x])
     #   
@@ -145,11 +154,13 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
         for y in range(0, len(listOfArrays[x])):
             epochNumber = y + 1
             learnedWeights = listOfArrays[x][y][0]
+            info = 'Learned bias = ' + str(learnedWeights[0])
+            learnedWeights.pop(0)
             for k in range(0, len(learnedWeights)):
                 learnedWeights[k] = 'w_' + str(k + 1) + ' = ' + str(learnedWeights[k])   
             #
             numOfErrors = listOfArrays[x][y][1]
-            string = 'EPOCH ' + str(epochNumber) + ': Learned Weights = ' + str(learnedWeights) + ', ' + '# of errors made on training data = ' + str(numOfErrors) + '\n'
+            string = 'EPOCH ' + str(epochNumber) + ': ' + info + ', Learned Weights =  ' + str(learnedWeights) + ', ' + '# of errors made on training data = ' + str(numOfErrors) + '\n'
             lines.append(string)
         #
     #
@@ -260,6 +271,7 @@ def main():
             os.system('rm shuffledData.data')
             sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0])
             percWeights = experiment.getInitWeightVector(sizeOfWeightVector, 4)
+            percWeights[0] = 0
             
         else:
             
@@ -268,6 +280,7 @@ def main():
             processed_data = process_file(input_path)   
             sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0])
             percWeights = experiment.getInitWeightVector(sizeOfWeightVector, taskNum)
+            percWeights[0] = 0
             
         #
         
