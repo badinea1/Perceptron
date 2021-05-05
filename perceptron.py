@@ -69,7 +69,7 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
         perceptronOutput = getPerceptronOutput(currWeights, trainingEx)
         if(targetOutput != perceptronOutput):
             currWeights = updatePerceptronWeights(learningRate, currWeights, trainingEx, targetOutput)
-            numOfErrors += 1   
+            numOfErrors += 1
         #
     #
         
@@ -86,20 +86,21 @@ def learnFromDataSet(learningRate, percWeights, trainingSet):
     output: a list in which the kth element will contain information about the kth
     epoch of learning which takes place
     '''
- 
-    result = performOneEpoch(learningRate, percWeights, trainingSet)
+    
+    copyOfPercWeights = percWeights.copy()
+    result = performOneEpoch(learningRate, copyOfPercWeights, trainingSet)
     array = [result]
-    percWeights = result[0]
+    copyOfPercWeights = result[0]
     numOfErrors = result[1]
    
     while(True):
-        newResult = performOneEpoch(learningRate, percWeights, trainingSet)
+        newResult = performOneEpoch(learningRate, copyOfPercWeights, trainingSet)
         newWeights = newResult[0]
         newNumOfErrors = newResult[1]
         if((newNumOfErrors > numOfErrors) | (numOfErrors == 0)):
            break
         else:
-           percWeights = newWeights
+           copyOfPercWeights = newWeights
            numOfErrors = newNumOfErrors
            array.append(newResult)
         #
