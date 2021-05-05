@@ -9,9 +9,13 @@ This repository contains a Python based perceptron learner.
 The repository includes four main deliverables:
   experiment.py - Deals with initialzing weight vectors for task 2. Creating different weight vectors with 0s and 1s.
                   Taking that data and mixing it up in random order thats added into a data file.
+                  
+                  
   project4.py   - Creates data needed for doing learning problem one, two, or three. Creating stat files for D2, D3, or D4 
                   with the data files that come with it. In the end checking arguments and assigning path to the different variables
                   Creating area of task numbers and the stat file tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2. With a stat file with all the data.
+                  
+                  
   perceptron.py - (our source code) this is whats used to get the petceptron output for our training data. With updateding weights for a 
                   perceptron if it incorrectly classified and performs that needed epoch for learning. Then it records the information 
                   needed for each set.
