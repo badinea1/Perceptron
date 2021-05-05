@@ -19,6 +19,7 @@ The repository includes four main deliverables:
        3. any parts of this assignment we found easy,
        4. any parts of this assignment we found challenging or couldn't get working correctly,
        5. Details on how our team functioned
+       6. Any other remarks we have
 
 **LINK TO REPO**: https://github.com/badinea1/Perceptron
 
