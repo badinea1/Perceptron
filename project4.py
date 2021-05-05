@@ -79,7 +79,7 @@ def getTrainingDataForLP(label, processed_data):
                array.append(1)
                for k in range(0, len(array)):
                    array[k] = float(array[k])
-               #
+               # set the array with the data
                trainingSet.append(array)
            #
         else:
@@ -266,7 +266,7 @@ def main():
             percWeights = experiment.getInitWeightVector(sizeOfWeightVector, taskNum)
             percWeights[0] = 0
             
-        #
+        # create the stat file with all the data
         
         nameOfEpochFile = 'T' + str(taskNum) + 'EpochStatFile.txt'
         task = 'T' + str(taskNum)
