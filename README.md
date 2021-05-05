@@ -7,12 +7,13 @@ This repository contains a Python based perceptron learner.
 
 ## Contents
 The repository includes four main deliverables:
-  1. **experiment.py, project4.py**: our source code
-  2. **D2**: The "epoch stats file" containing epoch #, # of errors on training data for that epoch, and current weight vector for each of the three LPs for T2. The              plot for each of the three LPs for T2
-  3. **D3**: All the epoch stats files and all the plots from T3
-  4. **D4**: All the epoch stats files and all the plots from T4
-  5. **D5**: All the written reports from T5
-  6. **D6**: a writeup that addresses the following:
+  1. **experiment.py, project4.py, perceptron.py**: our source code
+  2. **iris.txt**: input data
+  3. **D2**: The "epoch stats file" containing epoch #, # of errors on training data for that epoch, and current weight vector for each of the three LPs for T2. The              plot for each of the three LPs for T2
+  4. **D3**: All the epoch stats files and all the plots from T3
+  5. **D4**: All the epoch stats files and all the plots from T4
+  6. **D5**: All the written reports from T5
+  7. **D6**: a writeup that addresses the following:
        1. anything positive we enjoyed or learned from this assignment,
        2. anything negative we didn't like about this assignment,
        3. any parts of this assignment we found easy,
