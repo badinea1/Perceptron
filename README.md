@@ -19,8 +19,6 @@ The repository includes four main deliverables:
        3. any parts of this assignment we found easy,
        4. any parts of this assignment we found challenging or couldn't get working correctly,
        5. Details on how our team functioned
-     
-**NOTE**: For the program to run successfully, you must have input and output file locations as command line arguments (shown below). 
 
 **LINK TO REPO**: https://github.com/badinea1/Perceptron
 
@@ -39,5 +37,5 @@ On OnDemand, go to your File Home Directory and upload source code and the input
 
 ``` 
    module add python
-   python3 project4.py [INPUT FILE PATH] [LEARNING RATE (e.g. 0.1,0.3, etc)
+   python3 project4.py [INPUT FILE PATH] [LEARNING RATE]
 ```
