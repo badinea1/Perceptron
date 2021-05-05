@@ -13,6 +13,7 @@ import experiment
 import os
 import matplotlib.pyplot as plt
 
+
 def process_file(path):
     
     """
@@ -106,28 +107,19 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     is a string representing the name of the epoch file that will be produced
     output: an epoch file required for D2, D3, or D4 of the project
     '''
- 
-    # Create training data for LP 1
-    trainingSet1 = getTrainingDataForLP('Iris-setosa', processed_data)
     
-    # Create training data for LP 2
-    trainingSet2 = getTrainingDataForLP('Iris-versicolor', processed_data)
+    learningProblems = []
+    items = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
+    titles = ['Iris-setosa vs. not Iris-setosa', 'Iris-versicolor vs. not Iris-versicolor', 'Iris-virginica vs. not Iris-virginica']
+    copyOfPercWeights = percWeights.copy()
     
-    # Create training data for LP 3
-    trainingSet3 = getTrainingDataForLP('Iris-virginica', processed_data)
-    
-    # get information about every epoch of learning for trainingSet1
-    array1 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet1)
-    
-    # get information about every epoch of learning for trainingSet2
-    array2 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet2)
-    
-    # get information about every epoch of learning for trainingSet3
-    array3 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet3)
+    for x in range(0, len(items)):
+        trainingSet = getTrainingDataForLP(items[x], processed_data)
+        array = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet)
+        learningProblems.append(array)
+    #
     
     file = open(nameOfEpochFile, 'w')
-    listOfArrays = [array1, array2, array3]
-    copyOfPercWeights = percWeights.copy()
     lines = []
     
     word = 'Learning Rate: ' + str(learningRate) + '\n'
@@ -145,21 +137,21 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     word = 'Initial Weight Vector: ' + str(copyOfPercWeights) + '\n'
     lines.append(word)
     
-    for x in range(0, len(listOfArrays)):
+    for x in range(0, len(learningProblems)):
         lines.append('******************\n')
         number = x + 1
-        word = 'LP ' + str(number) + '\n'
+        word = 'LP' + str(number) + ' (' + titles[x] + ')' + '\n'
         lines.append(word)
         lines.append('\n')
-        for y in range(0, len(listOfArrays[x])):
+        for y in range(0, len(learningProblems[x])):
             epochNumber = y + 1
-            learnedWeights = listOfArrays[x][y][0]
+            learnedWeights = learningProblems[x][y][0]
             info = 'Learned bias = ' + str(learnedWeights[0])
             learnedWeights.pop(0)
             for k in range(0, len(learnedWeights)):
                 learnedWeights[k] = 'w_' + str(k + 1) + ' = ' + str(learnedWeights[k])   
             #
-            numOfErrors = listOfArrays[x][y][1]
+            numOfErrors = learningProblems[x][y][1]
             string = 'EPOCH ' + str(epochNumber) + ': ' + info + ', Learned Weights =  ' + str(learnedWeights) + ', ' + '# of errors made on training data = ' + str(numOfErrors) + '\n'
             lines.append(string)
         #
@@ -182,36 +174,27 @@ def createPlotFile(processed_data, learningRate, percWeights, task):
     output: a plot required for D2, D3, or D4 of the project
     '''
     
-    # Create training data for LP 1
-    trainingSet1 = getTrainingDataForLP('Iris-setosa', processed_data)
+    learningProblems = []
+    items = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
+    titles = ['Iris-setosa vs. not Iris-setosa', 'Iris-versicolor vs. not Iris-versicolor', 'Iris-virginica vs. not Iris-virginica']
+    copyOfPercWeights = percWeights.copy()
     
-    # Create training data for LP 2
-    trainingSet2 = getTrainingDataForLP('Iris-versicolor', processed_data)
-    
-    # Create training data for LP 3
-    trainingSet3 = getTrainingDataForLP('Iris-virginica', processed_data)
-    
-    # get information about every epoch of learning for trainingSet1
-    array1 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet1)
-    
-    # get information about every epoch of learning for trainingSet2
-    array2 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet2)
-    
-    # get information about every epoch of learning for trainingSet3
-    array3 = perceptron.learnFromDataSet(learningRate, percWeights, trainingSet3)
-    
-    listOfArrays = [array1, array2, array3]
+    for x in range(0, len(items)):
+        trainingSet = getTrainingDataForLP(items[x], processed_data)
+        array = perceptron.learnFromDataSet(learningRate, copyOfPercWeights, trainingSet)
+        learningProblems.append(array)
+    #
 
-    for x in range(0, len(listOfArrays)):
+    for x in range(0, len(learningProblems)):
         number = x + 1
         word = task + 'LP' + str(number) + 'Plot.png'
         xValues = []
         yValues = []
-        for y in listOfArrays[x]:
+        for y in learningProblems[x]:
             yValues.append(y[len(y) - 1])
         #
-        for x in range(0, len(yValues)):
-            number = x + 1
+        for y in range(0, len(yValues)):
+            number = y + 1
             xValues.append(number)   
         #
         xValues.insert(0,0)
@@ -219,6 +202,7 @@ def createPlotFile(processed_data, learningRate, percWeights, task):
         plt.plot(xValues, yValues)
         plt.xlabel('epoch # of learning')
         plt.ylabel('# of errors made on training data')
+        plt.title(titles[x])
         plt.savefig(word)
         plt.clf()
     #
