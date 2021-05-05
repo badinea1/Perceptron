@@ -60,7 +60,6 @@ def shuffleData(fileName):
     #
     
     random.shuffle(rows)
-
     file = open('shuffledData.csv', 'w')
     obj = csv.writer(file)
     obj.writerows(rows)
