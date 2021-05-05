@@ -108,4 +108,4 @@ def learnFromDataSet(learningRate, percWeights, trainingSet):
    
     return array
    
-#
+# 
