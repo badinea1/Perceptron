@@ -7,6 +7,7 @@ This repository contains a Python based perceptron learner.
 
 ## Contents
 The repository includes four main deliverables:
+
   experiment.py - Deals with initialzing weight vectors for task 2. Creating different weight vectors with 0s and 1s.
                   Taking that data and mixing it up in random order thats added into a data file.
                   
