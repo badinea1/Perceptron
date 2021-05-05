@@ -8,10 +8,9 @@ This repository contains a Python based perceptron learner.
 ## Contents
 The repository includes four main deliverables:
 
-  experiment.py - contains basic functions that will be used by project4.py to complete tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2                
-  project4.py - generates all the material needed for D2, D3, and D4 as output
-       
-  perceptron.py - contains functions needed for perceptron learning, used by project4.py
+  1. experiment.py - contains basic functions that will be used by project4.py to complete tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2
+  2. project4.py - generates all the material needed for D2, D3, and D4 as output 
+  3. perceptron.py - contains functions needed for perceptron learning, used by project4.py
   
   4. **iris.txt**: input data
   5. **D2**: The "epoch stats file" containing epoch #, # of errors on training data for that epoch, and current weight vector for each of the three LPs for T2. The              plot for each of the three LPs for T2
