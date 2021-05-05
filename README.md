@@ -24,16 +24,7 @@ The repository includes four main deliverables:
 **LINK TO REPO**: https://github.com/badinea1/Perceptron
 
 ## Build Instructions for the HPC
-1. Method 1: Cloning repository
 
-```
-module add python
-git clone https://github.com/badinea1/Perceptron.git
-python3 project4.py [INPUT FILE PATH] [LEARNING RATE (e.g. 0.1,0.3, etc)
-
-```
-
-2. Method 2: 
 On OnDemand, go to your File Home Directory and upload source code and the input files. Then, in the HPC terminal, enter: 
 
 ``` 
