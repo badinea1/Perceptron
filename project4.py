@@ -209,7 +209,7 @@ def main():
    
     '''
     if the user provides less than 3 command-line arguments, 
-    he/she will be notified and the program will end -
+    he/she will be notified and the program will end 
     '''
     
     if len(sys.argv) < 3:
@@ -217,13 +217,13 @@ def main():
         sys.exit()
     #
     
-    # sys.argv[1] is a relative or absolute path to a .data file -
+    # sys.argv[1] is a relative or absolute path to a .data file 
     input_path = sys.argv[1]
         
-    # sys.argv[2] is represents the learning rate -
+    # sys.argv[2] represents the learning rate 
     learningRate = float(sys.argv[2])
     
-    # possibleTasks is a list of task numbers -
+    # possibleTasks is a list of task numbers 
     possibleTasks = [2, 3.1, 3.2, 3.3, 4.1, 4.2]
     
     os.system('rm D2/* > /dev/null 2>&1')
@@ -237,7 +237,7 @@ def main():
     os.system('mkdir D3')
     os.system('mkdir D4')
     
-    # create an epoch stat file for tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2
+    # create epoch stats files and plots for tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2 
     for taskNum in possibleTasks:
         
         processed_data = []
@@ -246,8 +246,8 @@ def main():
         if((taskNum == 4.1) | (taskNum == 4.2)):
             
             '''
-            if you want to do task 4, you would have to shuffle data from .data file
-            provided by input_path
+            if you want to do task 4.1 or 4.2, you would have to shuffle data from 
+            file provided by input_path 
             '''
             
             experiment.shuffleData(input_path)
@@ -259,14 +259,14 @@ def main():
             
         else:
             
-            # process data from a .data file provided by input_path
+            # process data from file provided by input_path 
             
             processed_data = process_file(input_path)   
             sizeOfWeightVector = len(processed_data[list(processed_data)[0]][0])
             percWeights = experiment.getInitWeightVector(sizeOfWeightVector, taskNum)
             percWeights[0] = 0
             
-        # create the stat file with all the data
+        #
         
         nameOfEpochFile = 'T' + str(taskNum) + 'EpochStatFile.txt'
         task = 'T' + str(taskNum)
