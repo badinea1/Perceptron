@@ -1,10 +1,10 @@
 import math
 
 '''
-Vihan Patel
 Gordon Petry
-Amulya Badineni
 Yuriy Deyneka
+Amulya Badineni
+Vihan Patel
 '''
 
 #computes perceptron output using a feature vector and a weight vector 
