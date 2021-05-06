@@ -1,54 +1,61 @@
-# Authors ; Amulya Badineni, Gordon Petry, Vihan Patel, Yuriy Deyneka
+# Authors : Amulya Badineni, Gordon Petry, Vihan Patel, Yuriy Deyneka
 # Filename: Reflection Write-Up
 # Description: A writeup reflecting on the assignment.
 
-(1) Anything positive you enjoyed or learned from this assignment:
+(1) anything positive you enjoyed or learned from this assignment
 
-Being able to implement the perceptron learning algorithm from scratch
+We were able to implement the perceptron learning algorithm from scratch
 ___________________________________________________________________________________________
 
-(2) Anything negative you didn't like about this assignment:
+(2) anything negative you didn't like about this assignment
 
 None
 
 ___________________________________________________________________________________________
 
-(3) Any parts of this assignment you found easy:
+(3) any parts of this assignment you found easy
 
 None
-
-___________________________________________________________________________________________
-
-(4) Any parts of this assignment you found challenging or couldn't get working correctly:
-
-The most challenging part of this assignment was debugging the source code that is meant 
-to generate material for D2, D3 and D4.  
 
 ____________________________________________________________________________________________
 
-(5) How the team functioned:
+(4) any parts of this assignment you found challenging or couldn't get working correctly
+
+One part of the assignment we found challenging was debugging code meant to generate plots 
+and epoch stat files for D2, D3, and D4. 
+
+____________________________________________________________________________________________
+
+(5) how your team functioned, including details such as what each team member contributed, 
+how the team communicated with each other, and how team software development & design was 
+accomplished
+
+---------------------------
+
+How the team functioned:
 
 Gordon: wrote source code to read a .csv or .data file, worked on Task 5
-Yuriy: worked on the readme, worked with Gordon to write source code to read .csv or .data 
-file, worked on reflection
-Vihan: implemented perceptron learning algorithm, wrote source code to generate all material 
-needed for D2, D3 and D4, worked on documentation for source code
-Amulya: worked on Task 5 with Gordon, worked on readme, worked with Vihan on percptron 
+Yuriy: worked on the readme, wrote source code to read .csv or .data file with Gordon, worked 
+on reflection
+Vihan: implemented perceptron learning algorithm, worked on source code documentation, 
+wrote source code to generate all material needed for D2, D3, and D4
+Amulya: worked on Task 5 with Gordon, worked on the readme, worked with Vihan on the perceptron
 learning algorithm
-
 ---------------------------
 
 How the team communicated: 
 
-We used GroupMe to chat with each other. Also, we would also have meetings on Zoom.
+We used GroupMe to chat with each other.  Also, we also had meetings 
+on Zoom.
 
 ---------------------------
 
 How team software development & design was accomplished: 
 
-We used github to share source code.
+We used Github to share source code.
 ___________________________________________________________________________________________
 
-(6) Any other remarks you want to make
+(6) any other remarks you want to make
 
 None
+___________________________________________________________________________________________
