@@ -35,7 +35,7 @@ def updatePerceptronWeights(learningRate, percWeights, featureVector, targetOutp
     
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron, 
-    featureVector is a list of numeric features, targetOutput is the output value
+    featureVector is a list of numeric features, targetOutput is the target value
     for a training example
     output: a list containing updated weights for a perceptron 
     '''
@@ -68,7 +68,7 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     
     '''
     Format of each element in trainingSet: [x_1, ..., x_n, targetOutput]
-    -> targetOutput is a 1 or -1
+    -> targetOutput is 1 or -1
     -> x_1 to x_n represents numeric features 
     '''
      
@@ -77,7 +77,7 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
         '''
         Each instance of training is partitioned into two parts:
         featureVector (first part) -> vector of numeric features
-        targetOutput (second part) -> label for the instance of training 
+        targetOutput (second part) -> target value for the instance of training 
         '''
         
         featureVector = item[0: len(item) - 1] 
