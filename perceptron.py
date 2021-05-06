@@ -1,5 +1,12 @@
 import math
 
+'''
+Vihan Patel
+Gordon Petry
+Amulya Badineni
+Yuriy Deyneka
+'''
+
 #used to get a perceptron output for a training example
 def getPerceptronOutput(percWeights, trainingEx):
     
