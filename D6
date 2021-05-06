@@ -1,10 +1,10 @@
-# Authors : Amulya Badineni, Gordon Petry, Vihan Patel, Yuriy Deyneka
+# Authors: Amulya Badineni, Gordon Petry, Vihan Patel, Yuriy Deyneka
 # Filename: Reflection Write-Up
 # Description: A writeup reflecting on the assignment.
 
 (1) anything positive you enjoyed or learned from this assignment
 
-We were able to implement the perceptron learning algorithm from scratch
+We were able to implement the perceptron learning algorithm from scratch.
 ___________________________________________________________________________________________
 
 (2) anything negative you didn't like about this assignment
@@ -30,9 +30,9 @@ ________________________________________________________________________________
 how the team communicated with each other, and how team software development & design was 
 accomplished
 
----------------------------
+********************************************
 
-How the team functioned:
+What each team member contributed:
 
 Gordon: wrote source code to read a .csv or .data file, worked on Task 5
 Yuriy: worked on the readme, wrote source code to read .csv or .data file with Gordon, worked 
@@ -41,18 +41,20 @@ Vihan: implemented perceptron learning algorithm, worked on source code document
 wrote source code to generate all material needed for D2, D3, and D4
 Amulya: worked on Task 5 with Gordon, worked on the readme, worked with Vihan on the perceptron
 learning algorithm
----------------------------
 
-How the team communicated: 
+********************************************
 
-We used GroupMe to chat with each other.  Also, we also had meetings 
-on Zoom.
+How the team communicated with each other: 
 
----------------------------
+We used GroupMe to chat with each other.  Also, we had meetings on Zoom.
+
+********************************************
 
 How team software development & design was accomplished: 
 
 We used Github to share source code.
+
+********************************************
 ___________________________________________________________________________________________
 
 (6) any other remarks you want to make
