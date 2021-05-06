@@ -47,7 +47,7 @@ def shuffleData(fileName):
     
     '''
     input: fileName is a string that represents an absolute or relative path to a .data file 
-    output: a .data file called shuffledData.data 
+    output: a file called shuffledData.data 
     '''
     
     rows = []
