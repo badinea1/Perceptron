@@ -168,10 +168,10 @@ def createPlotFile(processed_data, learningRate, percWeights, task):
     input: processed_data is a dictionary created using the process_file function, learningRate is a float, 
     percWeights is a list of initial weights for a perceptron, task is a string giving information about
     whether a plot is for task 2, 3.1, 3.2, 3.3, 4.1, or 4.2 
-    output: three .png files for a task
-        -> The format of the output file names is T#LP@Plot.png, where # is a task number (i.e. 2, 3.1, 3.2, 3.3, 4.1, 4.2)
-        and @ is 1, 2 or 3. If you see a title, T3.1LP1Plot.png, it means that the plot is for learning problem 1 (Iris-setosa vs.
-        not Iris-setosa) of task 3.1.
+    output: three .png files
+        -> The format of the name for the output files is T#LP@Plot.png, where # is a task number (i.e. 3.1) and @ is 1, 2 or 3. 
+        If the name of an output file is T3.1LP1Plot.png, it means that the plot is for learning problem 1 (Iris-setosa vs. not Iris-setosa) 
+        of task 3.1.
     '''
     
     learningProblems = []
