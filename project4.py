@@ -6,10 +6,10 @@ import os
 import matplotlib.pyplot as plt
 
 '''
-Vihan Patel
 Gordon Petry
-Amulya Badineni
 Yuriy Deyneka
+Amulya Badineni
+Vihan Patel
 '''
 
 def process_file(path):
