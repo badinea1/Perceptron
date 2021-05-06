@@ -4,32 +4,51 @@
 
 (1) Anything positive you enjoyed or learned from this assignment:
 
-Being able to apply the perceptron and actually learn from it hands on. 
-Seeing what it can bring to the table and seeing the actual impact of it in action.
-
+Being able to implement the perceptron learning algorithm from scratch
+___________________________________________________________________________________________
 
 (2) Anything negative you didn't like about this assignment:
+
 None
+
+___________________________________________________________________________________________
 
 (3) Any parts of this assignment you found easy:
+
 None
 
+___________________________________________________________________________________________
 
 (4) Any parts of this assignment you found challenging or couldn't get working correctly:
-Task 2 was one of the harder parts of the assignment considering we needed to have them the data run until all errors were zero.
-We needed to put more on the table for this part and make sure everything worked out correctly in the end.
 
+The most challenging part of this assignment was debugging the source code that is meant 
+to generate material for D2, D3 and D4.  
+
+____________________________________________________________________________________________
 
 (5) How the team functioned:
 
-We held regular meetings to brainstorm and design the code and to review our progress. We split the work among us evenly.
+Gordon: wrote source code to read a .csv or .data file, worked on Task 5
+Yuriy: worked on the readme, worked with Gordon to write source code to read .csv or .data 
+file, worked on reflection
+Vihan: implemented perceptron learning algorithm, wrote source code to generate all material 
+needed for D2, D3 and D4, worked on documentation for source code
+Amulya: worked on Task 5 with Gordon, worked on readme, worked with Vihan on percptron 
+learning algorithm
 
-With the actual production of our project we were able to successful meet up and figure out the roles for each of the individuals. 
-Creating different roles for each person and breaking up the task to where to move on from there. 
+---------------------------
 
-Vihan and Amulya worked on the algorithm
+How the team communicated: 
 
-Gordon and Yuriy worked the actual file reading in and the write up file. 
+We used GroupMe to chat with each other. Also, we would also have meetings on Zoom.
+
+---------------------------
+
+How team software development & design was accomplished: 
+
+We used github to share source code.
+___________________________________________________________________________________________
 
 (6) Any other remarks you want to make
+
 None
