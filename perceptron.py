@@ -11,7 +11,7 @@ Yuriy Deyneka
 def getPerceptronOutput(percWeights, featureVector):
     
     '''
-    input: percWeights is a list of weights for a perceptron, featureVector is a list of numerical features 
+    input: percWeights is a list of weights for a perceptron, featureVector is a list of numeric features 
     output: 1 or -1 
     '''
     
@@ -35,7 +35,7 @@ def updatePerceptronWeights(learningRate, percWeights, featureVector, targetOutp
     
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron, 
-    featureVector is a list of numerical features, targetOutput is the expected 
+    featureVector is a list of numeric features, targetOutput is the expected 
     perceptron output 
     output: a list containing updated weights for a perceptron 
     '''
