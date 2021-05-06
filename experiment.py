@@ -42,7 +42,7 @@ def getInitWeightVector(sizeOfWeightVector, taskNum):
     
 #
 
-#shuffles data from a .data file in random order 
+#randomly shuffles data from a .data file
 def shuffleData(fileName):
     
     '''
