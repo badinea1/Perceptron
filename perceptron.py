@@ -7,13 +7,13 @@ Amulya Badineni
 Yuriy Deyneka
 '''
 
-#computes perceptron output for an unlabeled training example 
+#computes perceptron output using a vector of features and a weight vector
 def getPerceptronOutput(percWeights, featureVector):
     
     '''
     input: percWeights is a list of weights for a perceptron, 
-    featureVector is a list representing an unlabeled training example 
-    output: perceptron output for an unlabeled training example 
+    featureVector is a list representing a vector of features 
+    output: perceptron output for a vector of features 
     '''
     
     total = 0
@@ -31,13 +31,13 @@ def getPerceptronOutput(percWeights, featureVector):
 
 #
 
-#updates perceptron weights if a perceptron incorrectly classifies an unlabeled training example 
+#updates perceptron weights if a perceptron incorrectly classifies a vector of features 
 def updatePerceptronWeights(learningRate, percWeights, featureVector, targetOutput):
     
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron, 
-    featureVector is a list representing an unlabeled training example, targetOutput is the expected 
-    perceptron output for an unlabeled training example 
+    featureVector is a list representing a vector of features, targetOutput is the expected 
+    perceptron output for a vector of features 
     output: a list containing updated weights for a perceptron 
     '''
             
