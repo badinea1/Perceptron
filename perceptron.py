@@ -37,7 +37,7 @@ def updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput)
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron, 
     trainingEx is a list representing an unlabeled training example, targetOutput is the expected 
-    perceptron output for trainingEx 
+    perceptron output for an unlabeled training example 
     output: a list containing updated weights for a perceptron 
     '''
             
@@ -58,7 +58,7 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron, trainingSet is a two dimensional list where
-    each element represents an instance of training 
+    each element represents a labeled training example 
     output: returns [currWeights, numOfErrors], where currWeights is a list that represents perceptron weights that are learned after performing
     an epoch of learning and numOfErrors is the # of training examples the perceptron incorrectly classifies while performing an epoch of 
     learning 
@@ -79,7 +79,7 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
         '''
         Each instance of training is partitioned into two parts:
         trainingEx (first part) -> instance of training without the label
-        targetOutput (second part) -> label for the instance of training
+        targetOutput (second part) -> label for the instance of training 
         '''
         
         trainingEx = item[0: len(item) - 1] 
@@ -119,11 +119,11 @@ def learnFromDataSet(learningRate, percWeights, trainingSet):
         if((newNumOfErrors > numOfErrors) | (numOfErrors == 0)):
            
            '''
-           Suppose we perform an epoch of learning and the # of times
-           a perceptron incorrectly classifies a training example is H.
-           If H is 0, then the perceptron is done learning. If H > 0, the
-           perceptron stops learning when it will incorrectly classify at
-           least H + 1 training examples on the next epoch of learning. 
+           Suppose the # of times a perceptron incorrectly classifies a training
+           example while performing an epoch of learning is H. If H is 0, then 
+           the perceptron will stop learning. If H > 0, the perceptron stops 
+           learning when it will incorrectly classify at least H + 1 training 
+           examples during the next epoch of learning. 
            '''
            
            break
