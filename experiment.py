@@ -4,6 +4,13 @@ import perceptron
 import csv
 import os
 
+'''
+Vihan Patel
+Gordon Petry
+Amulya Badineni
+Yuriy Deyneka
+'''
+
 #initializes a weight vector for tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2
 def getInitWeightVector(sizeOfWeightVector, taskNum):
   
