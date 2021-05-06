@@ -1,11 +1,3 @@
-"""
-Run the program using this file
-    > python3 project4.py input_path learning_rate
-    where
-        input_path : the path to a .csv or .data file
-        learning_rate : a float
-"""
-
 import csv
 import sys
 import perceptron
@@ -23,57 +15,55 @@ Yuriy Deyneka
 def process_file(path):
     
     """
-    Notes:
-        Assumes the label for the data lies in the final column
-        Assumes the file is formatted as a .csv or .data file
-    Arguments:
-        path : str : relative or absolute path to a csv file
-    Returns:
-        processed_data : ({label_i : [data_i]}) : a key-value dictionary,
-            data_i is a list of training examples associated with label_i
+    input: a string representing an absolute or relative path to a .csv or .data file -
+    output: a dictionary where an element's key is a string (i.e. 'Iris-setosa') and
+    an element's value is a list of training examples associated with its key -
     """
-
+    
     processed_data = dict()
 
     with open(path, newline='') as csvfile:
+        
         for row in csvfile:
-            # Remove any newline characters
+            
+            # Remove any newline characters from a line in a .data or .csv file -
             row = row.rstrip()
             
             if(len(row) > 0):
-                # Split file on ',' characters
+                
+                # create a list from the line we just removed newline characters from -
                 row = row.split(',')
-                # Remove the label from the data
                 label = row.pop()
-                # Convert list items to floats
                 row = list(map(float, row))
                 row.insert(0,1)
-                # Either append data to existing data list or
+                
+                # place the list we just created into a dictionary -
                 if label in processed_data:
                     processed_data[label].append(row)
-                # Add a new key to the dictionary and append data to list
                 else:
-                    # Ensure the row isn't empty
                     if label != '':
                         processed_data[label] = list()
                         processed_data[label].append(row)
                     #
                 #
+                
             #
+            
         #
+        
     #
 
     return processed_data
 
 #
 
-#creates training data needed for learning problem 1,2 or 3 of task 2
+#creates training data needed for learning problem 1,2 or 3 of the project -
 def getTrainingDataForLP(label, processed_data):
     
     '''
-    input: label is a string (i.e. 'Iris-virginica'), processed_data is a dictionary created
-    using the process_file function for a .data file
-    output: a two dimensional list representing training data
+    input: label is a string (i.e. 'Iris-virginica'), processed_data is a 
+    dictionary created using the process_file function -
+    output: a two dimensional list representing training data -
     '''
     
     trainingSet = []
@@ -104,14 +94,14 @@ def getTrainingDataForLP(label, processed_data):
        
 #
 
-#creates epoch stat files needed for D2, D3 or D4 of the project
+#creates epoch stats files needed for D2, D3 or D4 of the project -
 def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile):
     
     '''
-    input: processed_data is a dictionary created using the process_file function for a .data file,
-    learningRate is a float, percWeights is a list of initial weights for a perceptron, nameOfEpochFile
-    is a string representing the name of the epoch file that will be produced
-    output: an epoch file required for D2, D3, or D4 of the project
+    input: processed_data is a dictionary created using the process_file function, learningRate is a float, 
+    percWeights is a list of initial weights for a perceptron, nameOfEpochFile is a string representing the 
+    name of the epoch file which will be outputted -
+    output: an epoch file required for D2, D3, or D4 of the project -
     '''
     
     learningProblems = []
@@ -174,9 +164,8 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
 def createPlotFile(processed_data, learningRate, percWeights, task):
     
     '''
-    input: processed_data is a dictionary created using the process_file function for a .data file,
-    learningRate is a float, percWeights is a list of initial weights for a perceptron, task
-    is a string
+    input: processed_data is a dictionary created using the process_file function, learningRate is a float, 
+    percWeights is a list of initial weights for a perceptron, task is a string 
     output: a plot required for D2, D3, or D4 of the project
     '''
     
