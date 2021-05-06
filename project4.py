@@ -27,12 +27,12 @@ def process_file(path):
         
         for row in csvfile:
             
-            # Remove any newline characters from a row in a .data or .csv file 
+            # Remove any newline characters from a line in a .data or .csv file 
             row = row.rstrip()
             
             if(len(row) > 0):
                 
-                # create a list from the row we just removed newline characters from 
+                # create a list from a line we just removed newline characters from 
                 row = row.split(',')
                 label = row.pop()
                 row = list(map(float, row))
@@ -95,14 +95,14 @@ def getTrainingDataForLP(label, processed_data):
        
 #
 
-#creates epoch stats files needed for D2, D3 or D4 of the project 
+#creates an epoch stats file needed for the project 
 def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile):
     
     '''
     input: processed_data is a dictionary created using the process_file function, learningRate is a float, 
     percWeights is a list of initial weights for a perceptron, nameOfEpochFile is a string representing the 
-    name of the epoch file which will be outputted 
-    output: an epoch file required for D2, D3, or D4 of the project 
+    name of the epoch file which will be outputted from this function
+    output: an epoch stats file 
     '''
     
     learningProblems = []
@@ -161,14 +161,17 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     
 #
 
-#creates plots needed for D2, D3, or D4 of the project 
+#creates plots needed for the project
 def createPlotFile(processed_data, learningRate, percWeights, task):
     
     '''
     input: processed_data is a dictionary created using the process_file function, learningRate is a float, 
     percWeights is a list of initial weights for a perceptron, task is a string giving information about
     whether a plot is for task 2, 3.1, 3.2, 3.3, 4.1, or 4.2 
-    output: a .png file 
+    output: three .png files for a task
+        -> The format of the output file names is T#LP@Plot.png, where # is a task number (i.e. 2, 3.1, 3.2, 3.3, 4.1, 4.2)
+        and @ is 1, 2 or 3. If you see a title, T3.1LP1Plot.png, it means that the plot is for learning problem 1 (Iris-setosa vs.
+        not Iris-setosa) of task 3.1.
     '''
     
     learningProblems = []
@@ -219,7 +222,7 @@ def main():
         sys.exit()
     #
     
-    # sys.argv[1] is a relative or absolute path to a .data file 
+    # sys.argv[1] is a relative or absolute path to an input file 
     input_path = sys.argv[1]
         
     # sys.argv[2] represents a learning rate 
@@ -239,7 +242,7 @@ def main():
     os.system('mkdir D3')
     os.system('mkdir D4')
     
-    # create epoch stats files and plots 
+    # for loop below creates ALL epoch stats files and plots needed for the project
     for taskNum in possibleTasks:
         
         processed_data = []
