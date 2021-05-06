@@ -15,9 +15,10 @@ Yuriy Deyneka
 def process_file(path):
     
     """
-    input: a string representing an absolute or relative path to a .csv or .data file 
-    output: a dictionary where an element's key is a string (i.e. 'Iris-setosa') and
-    an element's value is a list of training examples associated with its key 
+    input: path is a string representing an absolute or relative path to a .csv or .data file 
+    output: a dictionary where each element has a ...
+        -> key = a string (i.e. 'Iris-setosa')
+        -> value = a list containing training examples associated with the key 
     """
     
     processed_data = dict()
@@ -26,12 +27,12 @@ def process_file(path):
         
         for row in csvfile:
             
-            # Remove any newline characters from a line in a .data or .csv file 
+            # Remove any newline characters from a row in a .data or .csv file 
             row = row.rstrip()
             
             if(len(row) > 0):
                 
-                # create a list from the line we just removed newline characters from 
+                # create a list from the row we just removed newline characters from 
                 row = row.split(',')
                 label = row.pop()
                 row = list(map(float, row))
@@ -167,7 +168,7 @@ def createPlotFile(processed_data, learningRate, percWeights, task):
     input: processed_data is a dictionary created using the process_file function, learningRate is a float, 
     percWeights is a list of initial weights for a perceptron, task is a string giving information about
     whether a plot is for task 2, 3.1, 3.2, 3.3, 4.1, or 4.2 
-    output: a plot required for D2, D3, or D4 of the project 
+    output: a .png file 
     '''
     
     learningProblems = []
@@ -208,8 +209,9 @@ def createPlotFile(processed_data, learningRate, percWeights, task):
 def main():
    
     '''
-    if the user provides less than 3 command-line arguments, 
-    he/she will be notified and the program will end 
+    if a user provides < 3 command-line arguments, he/she
+    will be notified of how to use python4.py and the 
+    program will terminate  
     '''
     
     if len(sys.argv) < 3:
@@ -220,7 +222,7 @@ def main():
     # sys.argv[1] is a relative or absolute path to a .data file 
     input_path = sys.argv[1]
         
-    # sys.argv[2] represents the learning rate 
+    # sys.argv[2] represents a learning rate 
     learningRate = float(sys.argv[2])
     
     # possibleTasks is a list of task numbers 
@@ -237,7 +239,7 @@ def main():
     os.system('mkdir D3')
     os.system('mkdir D4')
     
-    # create epoch stats files and plots for tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2 
+    # create epoch stats files and plots 
     for taskNum in possibleTasks:
         
         processed_data = []
