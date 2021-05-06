@@ -5,10 +5,10 @@ import csv
 import os
 
 '''
-Vihan Patel
 Gordon Petry
-Amulya Badineni
 Yuriy Deyneka
+Amulya Badineni
+Vihan Patel
 '''
 
 #initializes a weight vector for tasks 2, 3.1, 3.2, 3.3, 4 
