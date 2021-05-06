@@ -7,13 +7,13 @@ Amulya Badineni
 Yuriy Deyneka
 '''
 
-#computes perceptron output for an unlabeled training example -
+#computes perceptron output for an unlabeled training example 
 def getPerceptronOutput(percWeights, trainingEx):
     
     '''
     input: percWeights is a list of weights for a perceptron, 
-    trainingEx is a list representing an unlabeled training example -
-    output: perceptron output for an unlabeled training example -
+    trainingEx is a list representing an unlabeled training example 
+    output: perceptron output for an unlabeled training example 
     '''
     
     total = 0
@@ -31,14 +31,14 @@ def getPerceptronOutput(percWeights, trainingEx):
 
 #
 
-#updates perceptron weights if a perceptron incorrectly classifies an unlabeled training example -
+#updates perceptron weights if a perceptron incorrectly classifies an unlabeled training example 
 def updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput):
     
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron, 
     trainingEx is a list representing an unlabeled training example, targetOutput is the expected 
-    perceptron output for trainingEx -
-    output: a list containing updated weights for a perceptron -
+    perceptron output for trainingEx 
+    output: a list containing updated weights for a perceptron 
     '''
             
     perceptronOutput = getPerceptronOutput(percWeights, trainingEx)
@@ -53,15 +53,15 @@ def updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput)
     
 #
 
-#makes one pass through a training set in order to learn perceptron weights -
+#makes one pass through a training set in order to learn perceptron weights 
 def performOneEpoch(learningRate, percWeights, trainingSet):
     
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron, trainingSet is a two dimensional list where
-    each element represents an instance of training -
+    each element represents an instance of training 
     output: returns [currWeights, numOfErrors], where currWeights is a list that represents perceptron weights that are learned after performing
     an epoch of learning and numOfErrors is the # of training examples the perceptron incorrectly classifies while performing an epoch of 
-    learning -
+    learning 
     '''
     
     numOfErrors = 0
@@ -71,7 +71,7 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     Format of each element in trainingSet: [x_1, ..., x_n, targetOutput]
     -> targetOutput is a 1 or -1
     -> x_1 to x_n are used by a perceptron to calculate a number that will be compared with targetOutput
-    when updating perceptron weights -
+    when updating perceptron weights 
     '''
      
     for item in trainingSet:
@@ -80,7 +80,6 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
         Each instance of training is partitioned into two parts:
         trainingEx (first part) -> instance of training without the label
         targetOutput (second part) -> label for the instance of training
-        -
         '''
         
         trainingEx = item[0: len(item) - 1] 
@@ -96,15 +95,15 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
     
 #
 
-#records information about every epoch of learning done by a perceptron on a training set -
+#records information about every epoch of learning done by a perceptron on a training set 
 def learnFromDataSet(learningRate, percWeights, trainingSet):
     
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron,
     trainingSet is a two dimensional list where each element represents an instance of 
-    training -
+    training 
     output: a list in which the kth element will contain information about the kth
-    epoch of learning which takes place -
+    epoch of learning which takes place 
     '''
     
     copyOfPercWeights = percWeights.copy()
@@ -124,7 +123,7 @@ def learnFromDataSet(learningRate, percWeights, trainingSet):
            a perceptron incorrectly classifies a training example is H.
            If H is 0, then the perceptron is done learning. If H > 0, the
            perceptron stops learning when it will incorrectly classify at
-           least H + 1 training examples on the next epoch of learning. -
+           least H + 1 training examples on the next epoch of learning. 
            '''
            
            break
