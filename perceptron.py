@@ -8,18 +8,18 @@ Yuriy Deyneka
 '''
 
 #computes perceptron output for an unlabeled training example 
-def getPerceptronOutput(percWeights, trainingEx):
+def getPerceptronOutput(percWeights, featureVector):
     
     '''
     input: percWeights is a list of weights for a perceptron, 
-    trainingEx is a list representing an unlabeled training example 
+    featureVector is a list representing an unlabeled training example 
     output: perceptron output for an unlabeled training example 
     '''
     
     total = 0
     
-    for x in range(0, len(trainingEx)):
-        product = percWeights[x] * trainingEx[x]
+    for x in range(0, len(featureVector)):
+        product = percWeights[x] * featureVector[x]
         total = total + product
     #
     
@@ -32,20 +32,20 @@ def getPerceptronOutput(percWeights, trainingEx):
 #
 
 #updates perceptron weights if a perceptron incorrectly classifies an unlabeled training example 
-def updatePerceptronWeights(learningRate, percWeights, trainingEx, targetOutput):
+def updatePerceptronWeights(learningRate, percWeights, featureVector, targetOutput):
     
     '''
     input: learningRate is a float, percWeights is a list of weights for a perceptron, 
-    trainingEx is a list representing an unlabeled training example, targetOutput is the expected 
+    featureVector is a list representing an unlabeled training example, targetOutput is the expected 
     perceptron output for an unlabeled training example 
     output: a list containing updated weights for a perceptron 
     '''
             
-    perceptronOutput = getPerceptronOutput(percWeights, trainingEx)
+    perceptronOutput = getPerceptronOutput(percWeights, featureVector)
     copyOfPercWeights = percWeights.copy()
     
     for x in range(0, len(copyOfPercWeights)):
-        deltaWeight = trainingEx[x] * (targetOutput - perceptronOutput) * learningRate
+        deltaWeight = featureVector[x] * (targetOutput - perceptronOutput) * learningRate
         copyOfPercWeights[x] = copyOfPercWeights[x] + deltaWeight
     #
       
@@ -78,15 +78,15 @@ def performOneEpoch(learningRate, percWeights, trainingSet):
         
         '''
         Each instance of training is partitioned into two parts:
-        trainingEx (first part) -> instance of training without the label
+        featureVector (first part) -> instance of training without the label
         targetOutput (second part) -> label for the instance of training 
         '''
         
-        trainingEx = item[0: len(item) - 1] 
+        featureVector = item[0: len(item) - 1] 
         targetOutput = item[len(item) - 1]
-        perceptronOutput = getPerceptronOutput(currWeights, trainingEx)
+        perceptronOutput = getPerceptronOutput(currWeights, featureVector)
         if(targetOutput != perceptronOutput):
-            currWeights = updatePerceptronWeights(learningRate, currWeights, trainingEx, targetOutput)
+            currWeights = updatePerceptronWeights(learningRate, currWeights, featureVector, targetOutput)
             numOfErrors += 1
         #
     #
