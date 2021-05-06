@@ -15,9 +15,9 @@ Yuriy Deyneka
 def process_file(path):
     
     """
-    input: a string representing an absolute or relative path to a .csv or .data file -
+    input: a string representing an absolute or relative path to a .csv or .data file 
     output: a dictionary where an element's key is a string (i.e. 'Iris-setosa') and
-    an element's value is a list of training examples associated with its key -
+    an element's value is a list of training examples associated with its key 
     """
     
     processed_data = dict()
@@ -26,18 +26,18 @@ def process_file(path):
         
         for row in csvfile:
             
-            # Remove any newline characters from a line in a .data or .csv file -
+            # Remove any newline characters from a line in a .data or .csv file 
             row = row.rstrip()
             
             if(len(row) > 0):
                 
-                # create a list from the line we just removed newline characters from -
+                # create a list from the line we just removed newline characters from 
                 row = row.split(',')
                 label = row.pop()
                 row = list(map(float, row))
                 row.insert(0,1)
                 
-                # place the list we just created into a dictionary -
+                # place the list we just created into a dictionary 
                 if label in processed_data:
                     processed_data[label].append(row)
                 else:
@@ -57,13 +57,13 @@ def process_file(path):
 
 #
 
-#creates training data needed for learning problem 1,2 or 3 of the project -
+#creates training data needed for learning problem 1,2 or 3 of the project 
 def getTrainingDataForLP(label, processed_data):
     
     '''
     input: label is a string (i.e. 'Iris-virginica'), processed_data is a 
-    dictionary created using the process_file function -
-    output: a two dimensional list representing training data -
+    dictionary created using the process_file function 
+    output: a two dimensional list representing training data 
     '''
     
     trainingSet = []
@@ -94,14 +94,14 @@ def getTrainingDataForLP(label, processed_data):
        
 #
 
-#creates epoch stats files needed for D2, D3 or D4 of the project -
+#creates epoch stats files needed for D2, D3 or D4 of the project 
 def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFile):
     
     '''
     input: processed_data is a dictionary created using the process_file function, learningRate is a float, 
     percWeights is a list of initial weights for a perceptron, nameOfEpochFile is a string representing the 
-    name of the epoch file which will be outputted -
-    output: an epoch file required for D2, D3, or D4 of the project -
+    name of the epoch file which will be outputted 
+    output: an epoch file required for D2, D3, or D4 of the project 
     '''
     
     learningProblems = []
@@ -160,13 +160,14 @@ def createEpochStatFile(processed_data, learningRate, percWeights, nameOfEpochFi
     
 #
 
-#creates plots needed for D2, D3, or D4 of the project
+#creates plots needed for D2, D3, or D4 of the project 
 def createPlotFile(processed_data, learningRate, percWeights, task):
     
     '''
     input: processed_data is a dictionary created using the process_file function, learningRate is a float, 
-    percWeights is a list of initial weights for a perceptron, task is a string 
-    output: a plot required for D2, D3, or D4 of the project
+    percWeights is a list of initial weights for a perceptron, task is a string giving information about
+    whether a plot is for task 2, 3.1, 3.2, 3.3, 4.1, or 4.2 
+    output: a plot required for D2, D3, or D4 of the project 
     '''
     
     learningProblems = []
@@ -206,19 +207,23 @@ def createPlotFile(processed_data, learningRate, percWeights, task):
 
 def main():
    
-    # Check arguments and assign path to variable
+    '''
+    if the user provides less than 3 command-line arguments, 
+    he/she will be notified and the program will end -
+    '''
+    
     if len(sys.argv) < 3:
         print("Usage: project4.py [INPUT FILE PATH] [LEARNING RATE]")
         sys.exit()
     #
     
-    # sys.argv[1] has path to .data file
+    # sys.argv[1] is a relative or absolute path to a .data file -
     input_path = sys.argv[1]
         
-    # sys.argv[2] is learning rate
+    # sys.argv[2] is represents the learning rate -
     learningRate = float(sys.argv[2])
     
-    # possibleTasks is an array of task numbers 
+    # possibleTasks is a list of task numbers -
     possibleTasks = [2, 3.1, 3.2, 3.3, 4.1, 4.2]
     
     os.system('rm D2/* > /dev/null 2>&1')
