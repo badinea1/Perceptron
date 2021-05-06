@@ -13,6 +13,12 @@ import experiment
 import os
 import matplotlib.pyplot as plt
 
+'''
+Vihan Patel
+Gordon Petry
+Amulya Badineni
+Yuriy Deyneka
+'''
 
 def process_file(path):
     
