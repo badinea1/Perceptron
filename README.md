@@ -17,7 +17,7 @@
 
 ``` 
    1. Figure out the absolute path for a folder called Perceptron. 
-   2. Type 'cd ?', where ? represents the absolute path for a folder called Perceptron. Press the   return key.
+   2. Type 'cd ?', where ? represents the absolute path for a folder called Perceptron. Press the return key.
    3. Type ‘module add python’ and press the return key.
    4. (TELL USER HOW TO RUN PROJECT4.PY)
    5. If you have not done so, press the return key.
