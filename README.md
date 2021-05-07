@@ -13,11 +13,12 @@
   8. D5.pdf - contains reports needed for D5
   9. D6 - a file containing writeup needed for D6
 
-## Build Instructions for the HPC
-
-On OnDemand, go to your File Home Directory and upload source code and the input files. Then, in the HPC terminal, enter: 
+## Steps for running source code
 
 ``` 
-   module add python
-   python3 project4.py [INPUT FILE PATH] [LEARNING RATE]
+   1. Figure out the absolute path for a folder called Perceptron. 
+   2. Type 'cd ?', where ? represents the absolute path for a folder called Perceptron. Press the   return key.
+   3. Type ‘module add python’ and press the return key.
+   4. (TELL USER HOW TO RUN PROJECT4.PY)
+   5. If you have not done so, press the return key.
 ```
