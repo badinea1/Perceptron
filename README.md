@@ -1,10 +1,7 @@
 # CSC 426 Project 4: Perceptrons
 # Authors: Vihan Patel, Gordon Petry, Amulya Badineni, Yuriy Deyneka
-# Filename: README.md
-# Description: Describes the contents of the submission.
 
-## Contents
-The repository includes four main deliverables:
+## FILES
 
   1. experiment.py - contains basic functions that will be used by project4.py to complete tasks 2, 3.1, 3.2, 3.3, 4.1, 4.2
   2. project4.py - generates all the material needed for D2, D3 and D4
