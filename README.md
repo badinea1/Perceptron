@@ -16,7 +16,7 @@
 ## Steps for running source code
 
 ``` 
-   **NOTE:** You might want to look over D5.pdf before running any source code.
+   NOTE: You might want to look over D5.pdf before running any source code.
    D5.pdf analyzes material from folders D2, D3 and D4. If you run the source
    code, then D2, D3 and D4 will have new material that D5.pdf does not analyze.
    
