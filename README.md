@@ -18,8 +18,6 @@ The repository includes four main deliverables:
   8. **D5**: All the written reports from T5 (NOT SURE YET)
   9. D6 - a file containing writeup needed for D6
 
-**LINK TO REPO**: https://github.com/badinea1/Perceptron
-
 ## Build Instructions for the HPC
 
 On OnDemand, go to your File Home Directory and upload source code and the input files. Then, in the HPC terminal, enter: 
