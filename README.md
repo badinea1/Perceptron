@@ -3,8 +3,6 @@
 # Filename: README.md
 # Description: Describes the contents of the submission.
 
-This repository contains a Python based perceptron learner.
-
 ## Contents
 The repository includes four main deliverables:
 
