@@ -17,7 +17,8 @@
 
 ``` 
    NOTE: Look over D5.pdf before running any source code. D5.pdf analyzes material from folders D2, D3 and D4. 
-   If you run the source code, then D2, D3 and D4 will have new material that D5.pdf does not analyze.
+   If you run the source code, then D2, D3 and D4 will have new material that D5.pdf does not analyze. When you
+   look at the epoch stat files, you will see that bias is the same as w_0.
    
    1. Figure out the absolute path for a folder called Perceptron. 
    2. Type 'cd @', where @ represents the absolute path for a folder called Perceptron. Press the return key.
