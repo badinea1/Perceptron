@@ -22,6 +22,7 @@
    1. Figure out the absolute path for a folder called Perceptron. 
    2. Type 'cd @', where @ represents the absolute path for a folder called Perceptron. Press the return key.
    3. Type ‘module add python’ and press the return key.
-   4. Type 'python3 project4.py INPUT_PATH LEARNING_RATE'
+   4. Type 'python3 project4.py $ #', where $ represents the relative or absolute path to iris.data and 
+      # is a decimal representing a learning rate (i.e. 0.1)
    5. If you have not done so, press the return key.
 ```
