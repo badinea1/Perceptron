@@ -1,0 +1,30 @@
+Learning Rate: 0.1
+Initial bias: 0
+Initial Weight Vector: ['w_1 = 0.4454401539116781', 'w_2 = 0.2344731645986522', 'w_3 = 0.14117434556727526', 'w_4 = 0.3429291415198765']
+******************
+LP1 (Iris-setosa vs. not Iris-setosa)
+
+EPOCH 1: Learned bias = -0.2, Learned Weights =  ['w_1 = -0.954559846088322', 'w_2 = -0.40552683540134793', 'w_3 = -0.7988256544327248', 'w_4 = 0.06292914151987655'], # of errors made on training data = 1
+EPOCH 2: Learned bias = 0.0, Learned Weights =  ['w_1 = 0.06544015391167801', 'w_2 = 0.29447316459865214', 'w_3 = -0.5188256544327248', 'w_4 = 0.10292914151987656'], # of errors made on training data = 1
+EPOCH 3: Learned bias = 0.0, Learned Weights =  ['w_1 = 0.06544015391167801', 'w_2 = 0.29447316459865214', 'w_3 = -0.5188256544327248', 'w_4 = 0.10292914151987656'], # of errors made on training data = 0
+******************
+LP2 (Iris-versicolor vs. not Iris-versicolor)
+
+EPOCH 1: Learned bias = -0.2, Learned Weights =  ['w_1 = -0.43455984608832177', 'w_2 = -0.4855268354013478', 'w_3 = -0.3988256544327249', 'w_4 = 0.08292914151987651'], # of errors made on training data = 3
+EPOCH 2: Learned bias = -0.2, Learned Weights =  ['w_1 = -0.29455984608832164', 'w_2 = -0.5055268354013477', 'w_3 = -0.658825654432725', 'w_4 = -0.13707085848012351'], # of errors made on training data = 2
+EPOCH 3: Learned bias = -0.2, Learned Weights =  ['w_1 = -0.15455984608832152', 'w_2 = -0.5255268354013476', 'w_3 = -0.9188256544327251', 'w_4 = -0.35707085848012354'], # of errors made on training data = 2
+EPOCH 4: Learned bias = -0.2, Learned Weights =  ['w_1 = -0.014559846088321393', 'w_2 = -0.5455268354013475', 'w_3 = -1.1788256544327251', 'w_4 = -0.5770708584801236'], # of errors made on training data = 2
+EPOCH 5: Learned bias = -0.2, Learned Weights =  ['w_1 = 0.12544015391167873', 'w_2 = -0.5655268354013474', 'w_3 = -1.4388256544327254', 'w_4 = -0.7970708584801236'], # of errors made on training data = 2
+EPOCH 6: Learned bias = -0.2, Learned Weights =  ['w_1 = 0.26544015391167886', 'w_2 = -0.5855268354013473', 'w_3 = -1.6988256544327256', 'w_4 = -1.0170708584801236'], # of errors made on training data = 2
+EPOCH 7: Learned bias = -0.2, Learned Weights =  ['w_1 = 0.405440153911679', 'w_2 = -0.6055268354013472', 'w_3 = -1.9588256544327258', 'w_4 = -1.2370708584801235'], # of errors made on training data = 2
+EPOCH 8: Learned bias = -0.2, Learned Weights =  ['w_1 = 0.5454401539116791', 'w_2 = -0.6255268354013471', 'w_3 = -2.218825654432726', 'w_4 = -1.4570708584801235'], # of errors made on training data = 2
+EPOCH 9: Learned bias = -0.2, Learned Weights =  ['w_1 = 0.6854401539116792', 'w_2 = -0.645526835401347', 'w_3 = -2.4788256544327263', 'w_4 = -1.6770708584801235'], # of errors made on training data = 2
+EPOCH 10: Learned bias = -0.2, Learned Weights =  ['w_1 = 0.8254401539116791', 'w_2 = -0.6655268354013469', 'w_3 = -2.7388256544327265', 'w_4 = -1.8970708584801235'], # of errors made on training data = 2
+EPOCH 11: Learned bias = -0.2, Learned Weights =  ['w_1 = 1.0654401539116793', 'w_2 = -0.5655268354013469', 'w_3 = -2.8188256544327266', 'w_4 = -1.9970708584801233'], # of errors made on training data = 2
+EPOCH 12: Learned bias = -0.2, Learned Weights =  ['w_1 = 1.2054401539116795', 'w_2 = -0.5855268354013468', 'w_3 = -3.078825654432727', 'w_4 = -2.217070858480123'], # of errors made on training data = 2
+******************
+LP3 (Iris-virginica vs. not Iris-virginica)
+
+EPOCH 1: Learned bias = 0.0, Learned Weights =  ['w_1 = 0.6854401539116781', 'w_2 = 0.19447316459865216', 'w_3 = 1.0611743455672755', 'w_4 = 0.8029291415198765'], # of errors made on training data = 2
+******************
+

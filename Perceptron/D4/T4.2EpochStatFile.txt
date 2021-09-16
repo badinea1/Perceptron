@@ -1,0 +1,21 @@
+Learning Rate: 0.1
+Initial bias: 0
+Initial Weight Vector: ['w_1 = 0', 'w_2 = 0', 'w_3 = 0', 'w_4 = 0']
+******************
+LP1 (Iris-setosa vs. not Iris-setosa)
+
+EPOCH 1: Learned bias = 0.0, Learned Weights =  ['w_1 = -0.45999999999999996', 'w_2 = 0.07999999999999996', 'w_3 = -0.8000000000000002', 'w_4 = -0.38'], # of errors made on training data = 2
+EPOCH 2: Learned bias = 0.0, Learned Weights =  ['w_1 = -0.9199999999999999', 'w_2 = 0.15999999999999992', 'w_3 = -1.6000000000000003', 'w_4 = -0.76'], # of errors made on training data = 2
+EPOCH 3: Learned bias = 0.2, Learned Weights =  ['w_1 = 0.040000000000000036', 'w_2 = 0.84', 'w_3 = -1.2200000000000002', 'w_4 = -0.72'], # of errors made on training data = 1
+EPOCH 4: Learned bias = 0.2, Learned Weights =  ['w_1 = 0.040000000000000036', 'w_2 = 0.84', 'w_3 = -1.2200000000000002', 'w_4 = -0.72'], # of errors made on training data = 0
+******************
+LP2 (Iris-versicolor vs. not Iris-versicolor)
+
+EPOCH 1: Learned bias = -0.2, Learned Weights =  ['w_1 = -0.7799999999999998', 'w_2 = -0.76', 'w_3 = 0.14', 'w_4 = 0.2'], # of errors made on training data = 3
+EPOCH 2: Learned bias = -0.2, Learned Weights =  ['w_1 = -0.5399999999999996', 'w_2 = -0.76', 'w_3 = 0.66', 'w_4 = 0.48'], # of errors made on training data = 2
+******************
+LP3 (Iris-virginica vs. not Iris-virginica)
+
+EPOCH 1: Learned bias = 0.2, Learned Weights =  ['w_1 = 1.42', 'w_2 = 0.6000000000000001', 'w_3 = 1.1800000000000002', 'w_4 = 0.42000000000000004'], # of errors made on training data = 1
+******************
+
